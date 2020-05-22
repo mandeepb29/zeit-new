@@ -1,0 +1,146 @@
+@font-face {
+  font-family: Gilroy;
+  src: url(../../fonts/Gilroy-Heavy.ttf);
+  font-weight: 900;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(../../fonts/Gilroy-ExtraBold.woff2);
+  font-weight: 800;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(../../fonts/Gilroy-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(../../fonts/Gilroy-Medium.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(../../fonts/Gilroy-Regular.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(../../fonts/Gilroy-Light.ttf);
+  font-weight: 400;
+}
+
+body {
+  font-family: Gilroy;
+  font-size: $default-font-size;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Gilroy;
+  font-weight: 800;
+}
+
+h1{
+  font-size: 5rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+h3{
+  font-size: 3rem;
+}
+
+h4{
+  font-size: 2.5rem;
+}
+
+.intro-heading {
+  text-align: center;
+  padding: 1rem;
+
+
+  &__primary {
+    color: #ffc325;
+    font-size: 20rem;
+    font-weight: 700;
+    letter-spacing: -1rem;
+
+    &--1,
+    &--2 {
+      transition:0.4s all;
+    }
+  }
+
+  &__secondary {
+    color: $color-black;
+    font-size: 2rem;
+    font-weight: 600;
+    max-width: 700px;
+    line-height: 1.5;
+    margin: auto;
+  }
+}
+
+
+.heading{
+  margin-bottom: 4rem;
+  &__primary{
+    font-size: 6.5rem;
+    color:$color-primary-yellow;
+    letter-spacing: -0.2rem;
+  }
+  &__secondary{
+    font-size: 3.5rem;
+    color: $color-light;
+    letter-spacing: -0.05rem;
+  }
+  &__tertiory{
+    font-size: 1.5rem;
+    color: $color-dark;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+  &__color{
+    position: relative;
+    display: inline-block;
+    font-size: 4rem;
+    letter-spacing: -0.1rem;
+    color: $color-dark;
+    &:not(:first-child){
+      margin-top: 2.5rem;
+    }
+   
+
+    &--1{
+      
+      &::after{
+        content: attr(data-text);
+        position: absolute;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 0;
+        overflow: hidden;
+        color: $color-blue;
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      &:hover::after{
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+.p-grey{
+  color: $color-grey;
+}

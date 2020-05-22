@@ -1,0 +1,142 @@
+.navbar{
+    padding: 2rem 4rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1500;
+
+    .logo{
+        width: 6rem;
+    }
+
+    .hamburger{
+        width: 3rem;
+        height: 3rem;
+        padding: 3rem;
+        right: 0;
+        top: 0;
+        z-index: 1050;
+        position: fixed;
+       display: flex;
+       align-items: flex-end;
+       justify-content: space-between;
+       flex-direction: column;
+        cursor: pointer;
+
+        span{
+            position: absolute;
+            right: 3rem;
+            background-color: $color-dark;
+            border-radius: 2rem;
+            height: 5px;
+            transition: all 600ms;
+
+            &.one{
+                top:3rem;
+                width: 3.5rem;
+            }
+            &.two{
+                top: 4.2rem;
+                width: 2.5rem;
+            }
+        }
+
+        &:hover{
+            span{
+                &.one{
+                    width: 2.5rem;
+                }
+                &.two{
+                    width: 3.5rem;
+                }
+            }
+        }
+
+        &.toggled{
+            span{
+                background-color: $color-white;
+
+                &.one{
+                    transform: translateY(6px) rotate(45deg);
+                }
+                &.two{
+                    transform: translateY(-6px) rotate(-45deg);
+                    width:3.5rem
+                }
+            }
+
+            &:hover{
+                span{
+                    width: 3.5rem
+                }
+            }
+        }
+    }
+}
+
+.menu-wrap{
+    position: fixed;
+    top:-100vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color:$color-dark;
+    z-index: 1000;
+    padding: 8rem 4rem;
+}
+
+.menu{
+    padding: 1rem;
+
+    &__link{
+        margin-bottom: 1rem;
+
+        a{
+            font-size: 5rem;
+            color: $color-white;
+            font-weight: 700;
+           
+        }
+        
+    }
+}
+
+.contact{
+    margin-top: 8rem;
+
+    &__heading{
+        font-size: 4rem;
+        padding-bottom: 1rem;
+        color: $color-white;
+        border-bottom: 1px solid $color-primary-yellow;
+    }
+
+    &__item{
+        margin-top: 1rem;
+        &-label{
+            font-size: 1.8rem;
+            margin-bottom: 0rem;
+            font-weight: 600;
+            color:rgba($color-white,0.5)
+        }
+        &-value{
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: $color-white;
+        }
+    }
+}
+
+.social{
+    margin-top: 6rem;
+   
+    &__link{
+        margin-bottom: 3rem;
+        a{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $color-primary-yellow;
+        }
+    }
+}
