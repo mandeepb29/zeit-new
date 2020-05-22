@@ -49,8 +49,8 @@ cursorLinksTinyArr.forEach((e) => {
   e.addEventListener("mouseleave", removeTinyCursor);
 });
 
-elements.introText.addEventListener("mouseover", addHugeCursor);
-elements.introText.addEventListener("mouseleave", removeHugeCursor);
+// elements.introText.addEventListener("mouseover", addHugeCursor);
+// elements.introText.addEventListener("mouseleave", removeHugeCursor);
 
 //--FUNCTIONS TO MANIPULATE CURSOR PROPERTIES
 

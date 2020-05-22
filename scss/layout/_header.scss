@@ -49,20 +49,20 @@
             &-1{
                 left: 2%;
                 background-color: $color-primary-yellow-dark;
-                animation-delay: 2s;
-                animation-duration: 3s;
+                animation-delay: 0.5s;
+                animation-duration: 2s;
             }
             &-2{
                 right: 2%;
                 background-color: $color-blue;
-                animation-delay: 4s;
-                animation-duration: 4s;
+                animation-delay: 1s;
+                animation-duration: 3s;
             }
             &-3{
                 right: 8%;
                 background-color: $color-dark;
                 animation-delay: 0s;
-                animation-duration: 5s;
+                animation-duration: 3.5s;
             }
         }
         &--medium{
@@ -70,25 +70,25 @@
             width: 3rem;
 
             &-1{
-                left: 10%;
+                left: 7%;
                 background-color: $color-dark;
                 animation-delay: 0s;
-                animation-duration: 10s;
+                animation-duration: 5s;
             }
             &-2{
-                right: 20%;
+                right: 9%;
                 background-color: $color-light-grey;
-                animation-delay: 2s;
-                animation-duration: 10s;
+                animation-delay: 1s;
+                animation-duration: 4s;
             }
         }
         &--big{
-            height: 7rem;
-            width: 7rem;
+            height: 13rem;
+            width: 13rem;
             opacity: 0.2;
 
             &-1{
-                left: 15%;
+                left: 10%;
                 background-color: $color-light-grey;
                 animation-delay: 0s;
                 animation-duration: 50s;
@@ -96,9 +96,9 @@
             &-2{
                 height: 10rem;
                 width: 10rem;
-                right: 15%;
+                right: 12%;
                 background-color: $color-primary-yellow;
-                animation-delay: 5s;
+                animation-delay: 10s;
                 animation-duration: 70s;
                 bottom: -10rem;
             }
@@ -112,17 +112,18 @@
             opacity: 0.2;
 
             &-1{
-                right: 5%;
-                background-color: $color-light-grey;
-                animation-delay: 0s;
-                animation-duration: 50s;
-            }
-            &-2{
                 left: 3%;
                 background-color: $color-primary-yellow;
-                animation-delay: 5s;
-                animation-duration: 70s;
+                animation-delay: 3s;
+                animation-duration: 40s;
                 bottom: -10rem;
+            }
+            &-2{
+              right: 5%;
+              background-color: $color-light-grey;
+              animation-delay: 5s;
+              animation-duration: 50s;
+              bottom: -10rem;
             }
         }
     }
@@ -139,57 +140,57 @@
       &--tensor {
         // top:50%;
         left: 4%;
-        animation-delay: 1s;
-        animation-duration: 18s;
+        animation-delay: 2s;
+        animation-duration: 12s;
       }
       &--css {
         // top:10%;
-        left: 10%;
+        left: 12%;
         width: 4rem;
-        animation-delay: 5s;
-        animation-duration: 20s;
+        animation-delay: 7s;
+        animation-duration: 10s;
       }
       &--sass {
         //top:25%;
         width: 7rem;
         left: 20%;
-        animation-delay: 3s;
-        animation-duration: 15s;
+        animation-delay: 4s;
+        animation-duration: 8s;
       }
       &--mongo {
         // top:70%;
         left: 30%;
         width: 3rem;
         animation-delay: 0s;
-        animation-duration: 15s;
+        animation-duration: 10s;
       }
 
       //RIGHT TECH ICON
       &--node {
         //top:15%;
         right: 30%;
-        animation-delay: 2s;
-        animation-duration: 16s;
+        animation-delay: 3s;
+        animation-duration: 10s;
       }
       &--angular {
         //bottom:20%;
         right: 20%;
-        animation-delay: 5s;
-        animation-duration: 10s;
+        animation-delay: 0s;
+        animation-duration: 8s;
       }
       &--html {
         // bottom:10%;
         right: 10%;
         width: 4rem;
         animation-delay: 5s;
-        animation-duration: 16s;
+        animation-duration: 10s;
       }
       &--keras {
         // top:40%;
         right: 2%;
         width: 3rem;
         animation-delay: 6s;
-        animation-duration: 12s;
+        animation-duration: 10s;
       }
     }
 
