@@ -1,0 +1,7 @@
+.about-section{
+    background-color: $color-white;
+}
+.how-we-work-intro{
+    background-color: $color-primary-yellow-very-light;
+    @include flex-all-center;
+}

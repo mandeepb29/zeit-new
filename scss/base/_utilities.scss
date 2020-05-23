@@ -1,16 +1,20 @@
 .text-dark{
-    color: $color-dark;
+    color: $color-dark !important;
 }
 
 .text-primary{
-    color: $color-primary-yellow;
+    color: $color-primary-yellow !important;
 }
 
 .text-primary-dark{
-    color:$color-primary-yellow-dark;
+    color:$color-primary-yellow-dark !important;
 }
 
 .section-padding{
-    padding: $section-padding;
+    padding: $section-padding ;
+}
+
+.padding-small{
+    padding: $section-padding-small;
 }
 

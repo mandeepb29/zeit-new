@@ -1,0 +1,96 @@
+.bg-element{
+    position: absolute;
+
+    &__clock{
+        top: 15%;
+        left:15%;
+        width:12rem;
+    }
+    &__plant{
+        bottom: 15rem;
+        left: 15%;
+        width: 15rem;
+    }
+    &__light{
+        right: 10%;
+        top: -7rem;
+    }
+    &__downwave{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        svg{
+            fill:$color-primary-yellow;
+        }
+    }
+    &__street-light{
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    &__bench{
+        bottom: 0;
+        right: 0;
+        transform: rotateY(180deg);
+        filter: grayscale(1);
+    }
+    &__white-light{
+        top: 0;
+        left: 2rem;
+        
+        transform: translateY(-20%);
+
+        svg{
+            width: 35rem;
+        }
+    }
+    &__topwave{
+        top: 0;
+        left: 0;
+        width: 100%;
+        
+    }
+    &__plant-bottom{
+        bottom: 0;
+        right: 0;
+        width: 30rem;
+    }
+    &__dove1{
+        left: 5%;
+        top: 15rem;
+        filter: brightness(5);
+
+        svg{
+            width: 40rem;
+        }
+    }
+    &__dove2{
+        top: 8rem;
+        right: 10%;
+        filter: brightness(5);
+
+    }
+    &__plant3{
+        bottom: 0;
+        left: 5%;
+        filter: grayscale(1);
+        svg{
+            width: 10rem;
+        }
+    }
+}
+
+.vase-stand{
+    position: relative;
+    border-bottom: 1.5px solid $color-white;
+    width: 100%;
+    margin-top: 8rem;
+
+    .bg-element__vase{
+        right: 0;
+        bottom: 1px;
+        width: 15rem;
+        filter: grayscale(1) brightness(10);
+    }
+}

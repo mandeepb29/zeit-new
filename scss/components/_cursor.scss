@@ -6,21 +6,20 @@
     transform: translate(-50%,-50%);
     pointer-events: none;
     z-index: 2000;
-    transition-duration: 150ms;
-    transition-timing-function: ease-out;
+    transition: transform .3s ease-in-out;
+    transform-origin: center center;
     mix-blend-mode: exclusion;
-   
+   top: 20rem;
+   left: 10rem;
     &__bg{
     transition: transform .3s ease-in-out;
-    // -webkit-backface-visibility: hidden;
-    // backface-visibility: hidden;
     display: block;
     left: 0;
     top: 0;
     background: #fff;
     transform: translate(50%,50%);
-    width: 100%;
-    height: 100%;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 80px;
     transform: scale(0.8);
     mix-blend-mode: exclusion;
@@ -30,6 +29,19 @@
 
 .cursor--link--big, .cursor--link--medium{
     display: inline-block;
+}
+
+.border-cursor{
+    background-color: $color-dark;
+    .cursor__bg{
+        transform: scale(0.5);
+    }
+}
+
+.huge-cursor{
+    .cursor__bg{
+        transform: scale(7);
+    }
 }
 
 .big-cursor{
@@ -44,11 +56,6 @@
     }
 }
 
-.huge-cursor{
-    .cursor__bg{
-        transform: scale(7);
-    }
-}
 
 .tiny-cursor{
     .cursor__bg{

@@ -1,15 +1,21 @@
+
+
 //CURSOR ANIMATION
 const elements = {
+  scrollContainer: document.querySelector(".scroll-container"),
+
   cursor: document.querySelector(".cursor"),
   header: document.querySelector("header"),
   navbar: document.querySelector(".navbar"),
-  introText: document.querySelector(".intro-heading"),
+  introText: document.querySelectorAll(".intro-heading"),
   cursorLinksBig: document.querySelectorAll(".cursor--link--big"),
   cursorLinksMedium: document.querySelectorAll(".cursor--link--medium"),
   cursorLinksTiny: document.querySelectorAll(".cursor--link--tiny"),
   menuLinks: document.querySelectorAll(".menu__link a"),
   toggleMenuBtn: document.querySelector(".hamburger"),
-  techIcons: document.querySelectorAll(".shape__tech")
+  techIcons: document.querySelectorAll(".shape__tech"),
+  storyContainer:document.querySelector(".story-section-wrapper"),
+  storyScrollableContainer:document.querySelector(".story-scrollable-content")
   //colorHeadings:document.querySelectorAll(".heading__color")
 };
 
@@ -18,6 +24,7 @@ cursorLinksMediumArr = Array.from(elements.cursorLinksMedium);
 cursorLinksTinyArr = Array.from(elements.cursorLinksTiny);
 techIconsArr = Array.from(elements.techIcons);
 menuLinksArr = Array.from(elements.menuLinks);
+introTextArr = Array.from(elements.introText);
 
 document.addEventListener("mousemove", moveCursor);
 
@@ -49,9 +56,13 @@ cursorLinksTinyArr.forEach((e) => {
   e.addEventListener("mouseleave", removeTinyCursor);
 });
 
-// elements.introText.addEventListener("mouseover", addHugeCursor);
-// elements.introText.addEventListener("mouseleave", removeHugeCursor);
 
+introTextArr.forEach((e) => {
+  e.addEventListener("mouseover", addBorderCursor);
+});
+introTextArr.forEach((e) => {
+  e.addEventListener("mouseleave", removeBorderCursor);
+});
 //--FUNCTIONS TO MANIPULATE CURSOR PROPERTIES
 
 function moveCursor(e) {
@@ -75,12 +86,12 @@ function removeBigCursor() {
   elements.cursor.classList.remove("big-cursor");
 }
 
-function addHugeCursor() {
-  elements.cursor.classList.add("huge-cursor");
+function addBorderCursor() {
+  elements.cursor.classList.add("border-cursor");
 }
 
-function removeHugeCursor() {
-  elements.cursor.classList.remove("huge-cursor");
+function removeBorderCursor() {
+  elements.cursor.classList.remove("border-cursor");
 }
 
 function addTinyCursor() {
@@ -90,6 +101,29 @@ function addTinyCursor() {
 function removeTinyCursor() {
   elements.cursor.classList.remove("tiny-cursor");
 }
+
+elements.header.addEventListener("scroll", ()=> {
+  console.log("header scrolled");
+} )
+
+
+
+//smooth scrolling on webpage
+
+// $("html").easeScroll({
+//   frameRate: 10,
+//   animationTime: 1200,
+//   stepSize: 40,
+//   pulseAlgorithm: 1,
+//   pulseScale: 8,
+//   pulseNormalize: 1,
+//   accelerationDelta: 20,
+//   accelerationMax: 10,
+//   keyboardSupport: true,
+//   arrowScroll: 50,
+//   touchpadSupport: true,
+//   fixedBackground: true
+// });
 
 //naviagtion timeLine
 const navTimeline = gsap.timeline({ paused: true });
@@ -146,23 +180,12 @@ const toggleMenu = () => {
 
 elements.toggleMenuBtn.addEventListener("click", toggleMenu);
 menuLinksArr.forEach((e) => {
-  e.addEventListener("click", () => {
+  e.addEventListener("click", (event) => {
+    event.preventDefault();
     elements.toggleMenuBtn.classList.remove("toggled");
     navTimeline.reverse();
   });
 });
-
-
-// PARTICLES TIMElINE
-
-// var circleTimeline = gsap.timeline({repeat:-1})
-// circleTimeline.
-// fromTo(".shape__circle", 5, {
-//  y:0
-// },
-// {
-//   top:0
-// })
 
 //SCROLL MAGIC INITIALISATION
 
@@ -171,7 +194,6 @@ var controller = new ScrollMagic.Controller();
 //about timeline
 
 var aboutTimelineTop = new gsap.timeline({ defaults: { opacity: 0 } });
-
 aboutTimelineTop
   .from(".about-section .heading__primary", 0.5, {
   y: 50,
@@ -184,7 +206,6 @@ aboutTimelineTop
 }, "-=0.4s");
 
 aboutTimelineBottom = new gsap.timeline({ defaults: { opacity: 0 } });
-
 aboutTimelineBottom
   .from(".about-section .heading__tertiory", {
     stagger: {
@@ -215,25 +236,102 @@ aboutTimelineBottom
   );
 
 //about scene top
-// new ScrollMagic.Scene({
-//   triggerElement: ".about-section",
-// })
-//   .setClassToggle(".body-wrapper", "bg-white")
-//   // .addIndicators({
-//   //   name: "about Scene",
-//   //   colorTrigger: "#101010",
-//   // })
-//   .setTween(aboutTimelineTop)
-//   .addTo(controller);
+new ScrollMagic.Scene({
+  triggerElement: ".about-section",
+})
+  // .addIndicators({
+  //   name: "about Scene",
+  //   colorTrigger: "#101010",
+  // })
+  .setTween(aboutTimelineTop)
+  .addTo(controller);
 
 //about scene bottom
 new ScrollMagic.Scene({
   triggerElement: "#about-bottom",
   triggerHook: 0.7,
 })
-
   // .addIndicators({
   //   name: "about bottom Scene",
   // })
   .setTween(aboutTimelineBottom)
   .addTo(controller);
+
+
+  //HOW WE WORK SECTION INTRO TIMELINE
+
+  var howWeWorkTimeline = gsap.timeline({defaults:{opacity:0,duration:0.5}});
+  howWeWorkTimeline
+  .from(".bg-element__downwave",{
+    opacity:1,
+    y:"100%"
+  })
+  .from(".bg-element__plant", {
+    duration:0.5,
+    y:"100%",
+    ease: "back.out(1.7)"
+  })
+  .from(".bg-element__light", {
+    duration:1,
+    y:"-100%",
+    ease: "back.out(1)"
+  },"-=1")
+  
+  .from(".bg-element__clock", {
+    opacity:0
+  },"-=0.1")
+  .from(".intro-heading__primary--small .char", {
+    y:30,
+    stagger: {
+      amount:0.5
+    }
+  },"<")
+  
+
+
+  new ScrollMagic.Scene({
+    triggerElement: ".how-we-work-intro",
+    //triggerHook: 0,
+  })
+    .setTween(howWeWorkTimeline)
+    .addTo(controller);
+
+
+    ///////------------------------STORY MODE FUCNTIONS--------------------------///
+
+    ////ADDING A SCROLL DETECTTION FUNCTION IN THE STORY WRAPPER CONTAINER 
+
+
+// $window = $(window);
+// var distance = $(elements.storyContainer).offset().top,
+//     $window = $(window);
+
+// $window.scroll(function() {
+//     if ( $window.scrollTop() >= distance ) {
+//         // Your div has reached the top
+//         elements.storyContainer.classList.add("scroll-snap");
+//     }
+// });
+
+// const startStory = () =>{
+//   elements.storyContainer.addEventListener('wheel', function(event)
+//   {
+//    if (event.deltaY < 0)
+//    {
+//      console.log("scroll up")
+//      moveToNextStory();
+//     }
+//    else if (event.deltaY >0){
+//     console.log("scroll down")
+//     moveToPreviousStory();
+//   }
+// });
+// }
+   
+//   const moveToNextStory = () => {
+//     elements.storyScrollableContainer.style.transform = "translateY(100vh)";
+//   }
+
+//   const moveToPreviousStory = () => {
+//     elements.storyScrollableContainer.style.transform = "translateY(-100vh)";
+//   }
