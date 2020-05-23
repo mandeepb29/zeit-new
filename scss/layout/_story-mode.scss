@@ -53,4 +53,14 @@
     }
 }
 
+.story-img{
+    position: relative;
+    z-index: 10;
+    // &__2{
+    //     margin-top: 15vh;
+    // }
+    &__4{
+        margin-top: 20vh;
+    }
+}
 

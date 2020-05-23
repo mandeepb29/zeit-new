@@ -342,7 +342,7 @@ h4 {
 
 .heading__tertiory {
   font-size: 1.5rem;
-  color: #101010;
+  color: #191716;
   opacity: 0.8;
   text-transform: uppercase;
 }
@@ -352,7 +352,7 @@ h4 {
   display: inline-block;
   font-size: 4rem;
   letter-spacing: -0.1rem;
-  color: #101010;
+  color: #191716;
 }
 
 .heading__color:not(:first-child) {
@@ -368,8 +368,8 @@ h4 {
   width: 0;
   overflow: hidden;
   color: transparent;
-  background-image: -webkit-gradient(linear, left top, right top, from(#090ea6), to(#7800b0));
-  background-image: linear-gradient(to right, #090ea6, #7800b0);
+  background-image: -webkit-gradient(linear, left top, right top, from(#090ea6), to(#9b5de5));
+  background-image: linear-gradient(to right, #090ea6, #9b5de5);
   -webkit-background-clip: text;
   -webkit-transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -402,7 +402,7 @@ h4 {
 }
 
 .text-dark {
-  color: #101010 !important;
+  color: #191716 !important;
 }
 
 .text-primary {
@@ -467,7 +467,7 @@ h4 {
 }
 
 .border-cursor {
-  background-color: #101010;
+  background-color: #191716;
 }
 
 .border-cursor .cursor__bg {
@@ -711,7 +711,7 @@ h4 {
 .navbar .hamburger span {
   position: absolute;
   right: 3rem;
-  background-color: #101010;
+  background-color: #191716;
   border-radius: 2rem;
   height: 5px;
   -webkit-transition: all 600ms;
@@ -761,7 +761,7 @@ h4 {
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: #101010;
+  background-color: #191716;
   z-index: 1000;
   padding: 8rem 4rem;
 }
@@ -909,7 +909,7 @@ h4 {
 
 .particles-container .shape__circle--small-3 {
   right: 8%;
-  background-color: #101010;
+  background-color: #191716;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   -webkit-animation-duration: 3.5s;
@@ -923,7 +923,7 @@ h4 {
 
 .particles-container .shape__circle--medium-1 {
   left: 7%;
-  background-color: #101010;
+  background-color: #191716;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   -webkit-animation-duration: 5s;
@@ -1125,6 +1125,15 @@ h4 {
 .story-section__5 {
   background-color: #ffcb4f;
   padding-top: 25vh;
+}
+
+.story-img {
+  position: relative;
+  z-index: 10;
+}
+
+.story-img__4 {
+  margin-top: 20vh;
 }
 
 .about-section {
