@@ -6,6 +6,12 @@
     @include flex-all-center;
 }
 
-.technology-section,.domain-section{
+.domain-section{
     background-color: $color-dark;
+    padding-bottom: 20rem;
+}
+
+.technology-section{
+    background-color: $color-dark-1;
+   
 }

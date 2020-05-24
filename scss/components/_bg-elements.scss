@@ -79,6 +79,25 @@
             width: 10rem;
         }
     }
+    &__black-wave{
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 2;
+        svg{
+            width: 100%;
+            transform: rotateX(180deg);
+            fill: $color-dark-1;
+        }
+    }
+    &__plant-gray{
+        right: 10%;
+        bottom: 15rem;
+        z-index: 1;
+        filter: grayscale(1);
+        width: 15rem;
+    }
+
 }
 
 .vase-stand{

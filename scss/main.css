@@ -662,6 +662,29 @@ h4 {
   width: 10rem;
 }
 
+.bg-element__black-wave {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.bg-element__black-wave svg {
+  width: 100%;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  fill: #101010;
+}
+
+.bg-element__plant-gray {
+  right: 10%;
+  bottom: 15rem;
+  z-index: 1;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  width: 15rem;
+}
+
 .vase-stand {
   position: relative;
   border-bottom: 1.5px solid #fff;
@@ -705,7 +728,7 @@ h4 {
   padding: 1rem;
   max-width: 300px;
   border-radius: 5px;
-  background: #222;
+  background: #191716;
   border-radius: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -722,9 +745,9 @@ h4 {
   min-height: 120px;
   overflow: hidden;
   z-index: 2 !important;
-  cursor: pointer;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  cursor: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .tech-box:hover {
@@ -1224,7 +1247,12 @@ h4 {
           justify-content: center;
 }
 
-.technology-section, .domain-section {
+.domain-section {
   background-color: #191716;
+  padding-bottom: 20rem;
+}
+
+.technology-section {
+  background-color: #101010;
 }
 /*# sourceMappingURL=main.css.map */
