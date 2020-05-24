@@ -5,3 +5,7 @@
     background-color: $color-primary-yellow-very-light;
     @include flex-all-center;
 }
+
+.technology-section,.domain-section{
+    background-color: $color-dark;
+}

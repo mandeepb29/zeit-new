@@ -1,0 +1,51 @@
+.icon{
+    padding: 1rem;
+    margin: 1rem 1rem 2rem;
+    border-bottom: 1px solid $color-primary-yellow;
+    text-align: center;
+
+    &__img{
+        width: 65%;
+        margin-bottom: 1.5rem;
+        filter: brightness(0) invert(1);
+    }
+    &__text{
+        font-weight: 700;
+        font-size: 2rem;
+        color: $color-primary-yellow-dark;
+    }
+}
+
+.tech-box {
+    position: relative !important;
+    box-sizing: border-box;
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 300px;
+    border-radius: 5px;
+    background: #222;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    min-height: 120px;
+    overflow: hidden;
+    z-index: 2 !important;
+  
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .tech-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
+   
+  }
+
+  .tech-img {
+    width: 90%;
+    margin: 0.2rem auto;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+  }

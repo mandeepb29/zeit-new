@@ -13,6 +13,7 @@ body {
   padding: 0;
   cursor: none;
   position: relative;
+  overflow-x: hidden;
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }

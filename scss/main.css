@@ -16,6 +16,7 @@ body {
   padding: 0;
   cursor: none;
   position: relative;
+  overflow-x: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
@@ -392,6 +393,11 @@ h4 {
   color: #000;
 }
 
+.p__short {
+  max-width: 500px;
+  margin: auto;
+}
+
 .char-wrap {
   margin-left: 2.1rem;
 }
@@ -669,6 +675,71 @@ h4 {
   width: 15rem;
   -webkit-filter: grayscale(1) brightness(10);
           filter: grayscale(1) brightness(10);
+}
+
+.icon {
+  padding: 1rem;
+  margin: 1rem 1rem 2rem;
+  border-bottom: 1px solid #ffcb4f;
+  text-align: center;
+}
+
+.icon__img {
+  width: 65%;
+  margin-bottom: 1.5rem;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+.icon__text {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffc325;
+}
+
+.tech-box {
+  position: relative !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 300px;
+  border-radius: 5px;
+  background: #222;
+  border-radius: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 120px;
+  overflow: hidden;
+  z-index: 2 !important;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.tech-box:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.tech-img {
+  width: 90%;
+  margin: 0.2rem auto;
+  z-index: 2;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar {
@@ -1151,5 +1222,9 @@ h4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.technology-section, .domain-section {
+  background-color: #191716;
 }
 /*# sourceMappingURL=main.css.map */
