@@ -1,0 +1,23 @@
+.client{
+    text-align: center;
+    margin:0 2rem;
+    background-color: $color-white;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    height: 100%;
+    border:1px solid $color-yellow-dark;
+    
+    @include flex-all-center;
+    &__row{
+        margin-top: 5rem;
+    }
+    &__img{
+        height: 6.5rem;
+        //filter: grayscale(1);
+        width: auto;
+
+        &--small{
+            height: 6.5rem;
+        }
+    }
+}

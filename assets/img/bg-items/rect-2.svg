@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2020 (64-Bit Evaluation Version) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="31.0018mm" height="56.9252mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 240.91 442.36"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#84CDBB;stroke-width:2.74;stroke-miterlimit:10}
+    .fil0 {fill:none;fill-rule:nonzero}
+    .fil2 {fill:#191716;fill-rule:nonzero}
+    .fil1 {fill:#FFCB4F;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <line class="fil0 str0" x1="151.25" y1="273.67" x2="216.14" y2= "273.67" />
+  <line class="fil0 str0" x1="151.25" y1="301.56" x2="216.14" y2= "301.56" />
+  <line class="fil0 str0" x1="151.25" y1="329.44" x2="216.14" y2= "329.44" />
+  <line class="fil0 str0" x1="151.25" y1="357.33" x2="216.14" y2= "357.33" />
+  <line class="fil0 str0" x1="151.25" y1="385.22" x2="216.14" y2= "385.22" />
+  <line class="fil0 str0" x1="151.25" y1="413.1" x2="216.14" y2= "413.1" />
+  <line class="fil0 str0" x1="151.25" y1="440.99" x2="216.14" y2= "440.99" />
+  <polygon class="fil1" points="-0,160.47 160.89,160.47 160.89,80.02 -0,80.02 "/>
+  <polygon class="fil2" points="160.47,80.45 240.91,80.45 240.91,0 160.47,0 "/>
+ </g>
+</svg>

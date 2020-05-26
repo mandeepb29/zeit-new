@@ -1,0 +1,42 @@
+.form{
+    position: relative;
+    z-index: 10;
+    &__label{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $color-yellow-primary;
+        margin-bottom: 1rem;
+        transition: all .3s;
+        width: 90%;
+        max-width: 500px;
+    }
+
+    &__input{
+        display: block;
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border: none;
+        position: relative;
+        background-color: $color-dark;
+        color: $color-yellow-dark;
+        transition: all 0.3s;
+        margin-bottom: 2.5rem;
+        border-bottom: 2px solid transparent;
+      
+
+        &:focus{
+            outline: none;
+            border-image: linear-gradient(to right, $color-blue-primary, $color-purple-primary);
+            + .form__label{
+               color: $color-white;
+            }
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-yellow-light;
+            font-weight: 600;
+        }
+    }
+}

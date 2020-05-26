@@ -62,3 +62,17 @@
         transform: scale(0.2);
     }
 }
+
+.hover-item{
+    transition: all 0.3s ease;
+}
+
+
+._3d-hover{
+   &__container{
+       perspective: 3rem;
+   }
+   &__item{
+       transition: transform 0.3s;
+   }
+}

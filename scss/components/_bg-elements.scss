@@ -21,7 +21,7 @@
         width: 100%;
 
         svg{
-            fill:$color-primary-yellow;
+            fill:$color-yellow-primary;
         }
     }
     &__street-light{
@@ -96,6 +96,94 @@
         z-index: 1;
         filter: grayscale(1);
         width: 15rem;
+    }
+    &__lamp-only{
+        right: 0;
+        bottom: 0;
+    }
+    &__circle-1{
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 40rem;
+    }
+    &__circle-2{
+        top: -6rem;
+        right: 0;
+        z-index: 0;
+        width: 40rem;
+    }
+    &__circle-3{
+        top: -6rem;
+        left: 0;
+        transform: rotateY(180deg);
+        width: 35rem;
+        z-index: 0;
+    }
+    &__rect-2{
+        bottom: 2rem;
+        width: 10rem;
+        left: 0;
+    }
+    &__rect-3{
+        top: 50%;
+        width: 15rem;
+        right: 0;
+    }
+    &__linear-wave{
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+    }
+    &__stripe{
+        height: 6rem;
+        width: 30vw;
+        border-radius: 20rem;
+        z-index: 0;
+        opacity: 0.8;
+        &-dark{
+            background-color: $color-dark-1;
+            
+            &--top{
+                top: 5rem;
+                right: 0;
+                transform: rotate(-30deg) translateX(30%);
+            }
+
+            &--bottom{
+                bottom: 5rem;
+                left: 0;
+                transform: rotate(-30deg) translateX(-30%);
+            }
+        }
+        &-yellow{
+            background-color: $color-yellow-dark;
+            &--top{
+                top: 15rem;
+                right: 0;
+                transform: rotate(-30deg) translateX(60%);
+            }
+            &--bottom{
+                bottom: 15rem;
+                left: 0;
+                transform: rotate(-30deg) translateX(-60%);
+            }
+        }
+        &-light{
+            background-color: $color-white;
+            &--top{
+                top: 25rem;
+                right: 0;
+                transform: rotate(-30deg) translateX(90%);
+            }
+            &--bottom{
+                bottom: 25rem;
+                left: 0;
+                transform: rotate(-30deg) translateX(-90%);
+            }
+        }
+
     }
 
 }

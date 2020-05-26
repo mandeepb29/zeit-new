@@ -1,7 +1,7 @@
 .header {
   min-height: 100vh;
   position: relative;
-  background-color: $color-primary-yellow-very-light;
+  background-color: $color-yellow-light;
   @include flex-all-center;
   overflow: hidden;
   z-index: 2;
@@ -48,7 +48,7 @@
 
             &-1{
                 left: 2%;
-                background-color: $color-primary-yellow-dark;
+                background-color: $color-yellow-dark;
                 animation-delay: 0.5s;
                 animation-duration: 2s;
             }
@@ -97,7 +97,7 @@
                 height: 10rem;
                 width: 10rem;
                 right: 12%;
-                background-color: $color-primary-yellow;
+                background-color: $color-yellow-primary;
                 animation-delay: 10s;
                 animation-duration: 70s;
                 bottom: -10rem;
@@ -113,7 +113,7 @@
 
             &-1{
                 left: 3%;
-                background-color: $color-primary-yellow;
+                background-color: $color-yellow-primary;
                 animation-delay: 3s;
                 animation-duration: 40s;
                 bottom: -10rem;
