@@ -6,6 +6,7 @@
         text-align: center;
         z-index: 2;
         position: relative;
+       // margin-left: 1rem;
 
         img{
             height: 350px;
@@ -17,8 +18,7 @@
             z-index: 2;
         }
 
-        &::after{
-        content: "";
+        &-bg{
         width: 100%;
         height: 100%;
         position: absolute;
@@ -31,7 +31,7 @@
         }
 
         &:hover{
-            &::after{
+            .team-member__img-bg{
                 transform: scaleX(2);
             }
              ~ .team-member__details > .team-member__details--name {

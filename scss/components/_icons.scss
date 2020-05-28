@@ -1,8 +1,19 @@
 .icon{
     padding: 1rem;
     margin: 1rem 1rem 2rem;
-    border-bottom: 1px solid $color-yellow-primary;
+    //border-bottom: 1px solid $color-yellow-primary;
     text-align: center;
+    position: relative;
+
+    &__border{
+      height: 1.5px;
+      width: 100%;
+      background-color:$color-yellow-primary;
+      position: absolute;
+      bottom: 0;
+      transform-origin: center;
+      left: 0;
+    }
 
     &__img{
         width: 65%;
@@ -39,25 +50,21 @@
         width: 90%;
         margin: 0.2rem auto;
         z-index: 2;
+        filter: grayscale(1) brightness(1.5);
         transition: all 0.3s ease-in-out;
-        img{
-         // filter: grayscale(1) brightness(1.5);
-          transition: all 0.3s;
-        }
       }
 
       &:hover {
         transform: translateY(-4px);
         box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
 
-        // .icon__tech-img img{
-        //   filter: grayscale(0) brightness(1);
-        // }
+        .icon__tech-img{
+          filter: none;
+        }
       }
     }
 
     &__footer{
-      border-bottom: none;
       padding: 1.5rem 0;
       margin: 0 0 0 2rem;
       filter: brightness(0) invert(1);

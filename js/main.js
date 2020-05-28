@@ -3,8 +3,10 @@
 //CURSOR ANIMATION
 const elements = {
   scrollContainer: document.querySelector(".scroll-container"),
-  _3dHoverContainer: document.querySelector("._3d-hover__container"),
-  _3dHoverItem: document.querySelector("._3d-hover__item"),
+  _3dHoverContainer: document.querySelectorAll("._3d-hover__container"),
+  _3dHoverItem: document.querySelectorAll("._3d-hover__item"),
+  storySections: document.querySelectorAll(".story-section"),
+  animatedHeadingsSection: document.querySelectorAll(".section-heading-animate"),
   //hoverContainer: document.querySelectorAll(".hover-this"),
   hoverItem: document.querySelectorAll(".hover-item"),
   cursor: document.querySelector(".cursor"),
@@ -29,9 +31,10 @@ techIconsArr = Array.from(elements.techIcons);
 menuLinksArr = Array.from(elements.menuLinks);
 introTextArr = Array.from(elements.introText);
 hoverItemArr = Array.from(elements.hoverItem);
-//_3dHoverContainerArr = Array.from(elements._3dHoverContainer);
-//_3dHoverItemArr = Array.from(elements._3dHoverItem);
-
+_3dHoverContainerArr = Array.from(elements._3dHoverContainer);
+_3dHoverItemArr = Array.from(elements._3dHoverItem);
+storySectionsArr = Array.from(elements.storySections);
+animatedHeadingsSectionArr = Array.from(elements.animatedHeadingsSection);
 document.addEventListener("mousemove", moveCursor);
 
 techIconsArr.forEach((e) => {
@@ -113,95 +116,125 @@ elements.header.addEventListener("scroll", ()=> {
 
 //functions to manipulate hover element
 function hoverEffect(e){
+  //console.log(this);
     const { offsetX: x, offsetY: y } = e,
     
     { offsetWidth: width, offsetHeight: height } = this,
  
-    move = 25,
+    move = 30,
     xMove = x / width * (move * 1.5) - move,
     yMove = y / height * (move * 1.5) - move;
 
     //console.log(x,y);
     this.style.transform = `translate(${xMove}px, ${yMove}px)`;
-
+    
     if (e.type === 'mouseleave') this.style.transform = '';
 }
+
+
 
 hoverItemArr.forEach(b => b.addEventListener('mousemove', hoverEffect));
 hoverItemArr.forEach(b => b.addEventListener('mouseleave', hoverEffect));
 
+
+
 //------------------------------------------------------------------------------//
 
-//functions to manipulate the 3d hover elements // that are team members image
+//functions to manipulate the 3d hover elements // --that are team members image
+_3dHoverContainerArr.forEach(el => el.addEventListener("mouseenter",onMouseEnterHandler));
+_3dHoverContainerArr.forEach(el => el.addEventListener("mouseleave",onMouseLeaveHandler));
+_3dHoverContainerArr.forEach(el => el.addEventListener("mousemove",onMouseMoveHandler));
 
 var onMouseEnterHandler = function(event){
-  update(event);
+ // console.log("mouse enter",this);
+  var innerItem = this.querySelector('._3d-hover__item');
+  //mouse.setOrigin(this);
+  update(event,innerItem);
 }
 
 var onMouseLeaveHandler = function() {
-    elements._3dHoverItem.style = "";
+  var innerItem = this.querySelector('._3d-hover__item');
+  innerItem.style = "";
+  //console.log(innerItem, 'styles changed successfully');
 };
 
-var onMouseMoveHandler = function(event) {
+var onMouseMoveHandler = function(event,el) {
+  var innerItem = this.querySelector('._3d-hover__item');
+  //console.log("mouse move",this);
   if (isTimeToUpdate()) {
-    update(event);
+    update(event,innerItem);
   }
 };
 
-elements._3dHoverContainer.addEventListener("mouseenter",onMouseEnterHandler);
-
-elements._3dHoverContainer.addEventListener("mouseleave",onMouseLeaveHandler);
-
-elements._3dHoverContainer.addEventListener("mousemove",onMouseMoveHandler);
+_3dHoverContainerArr.forEach(el => el.addEventListener("mouseenter",onMouseEnterHandler));
+_3dHoverContainerArr.forEach(el => el.addEventListener("mouseleave",onMouseLeaveHandler));
+_3dHoverContainerArr.forEach(el => el.addEventListener("mousemove",onMouseMoveHandler));
 
 var counter = 0;
 var updateRate = 10;
 var isTimeToUpdate = function() {
+ // console.log(counter);
   return counter++ % updateRate === 0;
 };
+
+// _3dHoverContainerArr.forEach(el => {
+//   console.log($(el).offset().top, $(el).offset().left);
+// })
 
 var mouse = {
   _x: 0,
   _y: 0,
   x: 0,
   y: 0,
+ 
+  setOrigin: function(itemContainer) { 
+    //console.log(itemContainer);
+    this.x =0;
+    this.y = 0;
+    this._x = itemContainer.offsetLeft + Math.floor(itemContainer.offsetWidth/2);
+    this._y = itemContainer.offsetTop + Math.floor(itemContainer.offsetHeight/2);
+    console.log(`x =  ${this.x},y = ${this.y},_x = ${this._x},_y = ${this._y}`);
+  },
+  
   updatePosition: function(event) {
-    var e = event || window.event;
+    //console.log("Update Position", event);
+    var e = event;
     this.x = e.clientX - this._x;
     this.y = (e.clientY - this._y) * -1;
-  },
-  setOrigin: function(e) {
-    this._x = e.offsetLeft + Math.floor(e.offsetWidth/2);
-    this._y = e.offsetTop + Math.floor(e.offsetHeight/2);
-    console.log(e,this.show());
-  },
-  show: function() { return '(' + this.x + ', ' + this.y + ')'; }
+    //console.log(this.show());
+  }
 }
-
 // Track the mouse position relative to the center of the container.
-  mouse.setOrigin(elements._3dHoverContainer);
 
-
-var update = function(event) {
+var update = function(event,innerItem) {
+  //console.log(event);
   mouse.updatePosition(event);
   updateTransformStyle(
-    (mouse.y / elements._3dHoverItem.offsetHeight/2).toFixed(2),
-    (mouse.x / elements._3dHoverItem.offsetWidth/2).toFixed(2)
+    (mouse.y / innerItem.offsetHeight/2).toFixed(2),
+    (mouse.x / innerItem.offsetWidth/2).toFixed(2),
+    innerItem
   );
 };
 
-var updateTransformStyle = function(x, y) {
+var updateTransformStyle = function(x, y, item) {
+  //console.log(item);
   var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
-  elements._3dHoverItem.style.transform = style;
-  elements._3dHoverItem.style.webkitTransform = style;
-  elements._3dHoverItem.style.mozTransform = style;
-  elements._3dHoverItem.style.msTransform = style;
-  elements._3dHoverItem.style.oTransform = style;
+  item.style.transform = style;
+  item.style.webkitTransform = style;
+  item.style.mozTransform = style;
+  item.style.msTransform = style;
+  item.style.oTransform = style;
 };
-
-
 //-------------------------------------------------------------------//
 
+for(let i=1;i<=3;i++){
+  let container = document.getElementById(`team-member-${i}`);
+  console.log(container);
+  mouse.setOrigin(container);
+}
+
+//register gsap plugins
+//gsap.registerPlugin(CSSRulePlugin);
 
 //naviagtion timeLine
 const navTimeline = gsap.timeline({ paused: true });
@@ -257,7 +290,6 @@ const toggleMenu = () => {
 };
 
 
-
 elements.toggleMenuBtn.addEventListener("click", toggleMenu);
 menuLinksArr.forEach((e) => {
   e.addEventListener("click", (event) => {
@@ -268,22 +300,44 @@ menuLinksArr.forEach((e) => {
 });
 
 //SCROLL MAGIC INITIALISATION
-
 var controller = new ScrollMagic.Controller();
 
-//about timeline
 
+//ANIMATE ALL THE HEADINGS IN THE SECTION 
+animatedHeadingsSectionArr.forEach(el => {
+   var headingParts = el.querySelectorAll(".heading__part")
+   headingsTimeline = gsap.timeline({defaults:{opacity:0,y:15}});
+
+   headingsTimeline.
+   from(headingParts, {
+     stagger:{
+       amount:0.3,
+     },
+     ease: "power4"
+   })
+   new ScrollMagic.Scene({
+     triggerElement: el
+   })
+     .setTween(headingsTimeline)
+     .addTo(controller);
+ });
+
+
+//about timeline
 var aboutTimelineTop = new gsap.timeline({ defaults: { opacity: 0 } });
 aboutTimelineTop
-  .from(".about-section .heading__primary", 0.5, {
-  y: 50,
-  duration:0.8,
-  ease: Power1.easeOut,
-})
   .from(".about-section .counter-box__item", {
   stagger:0.15,
   y: 50
 }, "-=0.4s");
+
+//tigger about scene top
+new ScrollMagic.Scene({
+  triggerElement: ".about-section",
+})
+  .setTween(aboutTimelineTop)
+  .addTo(controller);
+
 
 aboutTimelineBottom = new gsap.timeline({ defaults: { opacity: 0 } });
 aboutTimelineBottom
@@ -315,31 +369,15 @@ aboutTimelineBottom
     "<0.1s"
   );
 
-//about scene top
-new ScrollMagic.Scene({
-  triggerElement: ".about-section",
-})
-  // .addIndicators({
-  //   name: "about Scene",
-  //   colorTrigger: "#101010",
-  // })
-  .setTween(aboutTimelineTop)
-  .addTo(controller);
-
-//about scene bottom
+//tigger about scene bottom
 new ScrollMagic.Scene({
   triggerElement: "#about-bottom",
   triggerHook: 0.7,
 })
-  // .addIndicators({
-  //   name: "about bottom Scene",
-  // })
   .setTween(aboutTimelineBottom)
   .addTo(controller);
 
-
   //HOW WE WORK SECTION INTRO TIMELINE
-
   var howWeWorkTimeline = gsap.timeline({defaults:{opacity:0,duration:0.5}});
   howWeWorkTimeline
   .from(".bg-element__downwave",{
@@ -360,15 +398,11 @@ new ScrollMagic.Scene({
   .from(".bg-element__clock", {
     opacity:0
   },"-=0.1")
-  .from(".intro-heading__primary--small .char", {
-    y:30,
-    stagger: {
-      amount:0.5
-    }
+  .from(".intro-heading__primary--small", {
+    y:20,
+    ease: "back.out(1.7)"
   },"<")
   
-
-
   new ScrollMagic.Scene({
     triggerElement: ".how-we-work-intro",
     //triggerHook: 0,
@@ -377,41 +411,197 @@ new ScrollMagic.Scene({
     .addTo(controller);
 
 
-    ///////------------------------STORY MODE FUCNTIONS--------------------------///
+    //story section timeline
+    storySectionsArr.forEach(el => {
+      let headings = el.querySelectorAll('.heading__part');
+      let texts =  el.querySelector('p');
+      let image = el.querySelector('.story-img');
+      storyTimelineArray = gsap.timeline({defaults:{opacity:0}});
 
-    ////ADDING A SCROLL DETECTTION FUNCTION IN THE STORY WRAPPER CONTAINER 
+      storyTimelineArray
+      .from(headings, {
+        y:15,
+        stagger:{
+          amount:0.6,
+        },
+        ease: "power4"
+      })
+      .from(image, {
+        x:30,
+        duration:1,
+        ease: "power3"
+      },"<")
+      .from(texts,{
+        duration:0.8,
+        y:40,
+        ease: "power4"
+      },"-=0.6")
+      new ScrollMagic.Scene({
+        triggerElement: el,
+        triggerHook: 0.2
+      })
+        .setTween(storyTimelineArray)
+        .addTo(controller);
+    });
 
 
-// $window = $(window);
-// var distance = $(elements.storyContainer).offset().top,
-//     $window = $(window);
+    //DOMAIN SECTION TOP TIMLINE
 
-// $window.scroll(function() {
-//     if ( $window.scrollTop() >= distance ) {
-//         // Your div has reached the top
-//         elements.storyContainer.classList.add("scroll-snap");
-//     }
-// });
+    var domainTimelineTop = gsap.timeline({defaults:{opacity:0}});
 
-// const startStory = () =>{
-//   elements.storyContainer.addEventListener('wheel', function(event)
-//   {
-//    if (event.deltaY < 0)
-//    {
-//      console.log("scroll up")
-//      moveToNextStory();
-//     }
-//    else if (event.deltaY >0){
-//     console.log("scroll down")
-//     moveToPreviousStory();
-//   }
-// });
-// }
+    domainTimelineTop
+    .from(".domain-section p",{
+      y:25,
+      ease:"power2"
+    },"<0.2")
    
-//   const moveToNextStory = () => {
-//     elements.storyScrollableContainer.style.transform = "translateY(100vh)";
-//   }
+    new ScrollMagic.Scene({
+      triggerElement: ".domain-section",
+      //triggerHook: 0.2
+    })
+      .setTween(domainTimelineTop)
+      .addTo(controller);
 
-//   const moveToPreviousStory = () => {
-//     elements.storyScrollableContainer.style.transform = "translateY(-100vh)";
-//   }
+
+    //DOMAIN SECTION BOTTOM TIMLINE
+      var domainTimelineBottom = gsap.timeline({defaults:{opacity:0}});
+
+      domainTimelineBottom
+      .from(".domain-section .icon__border",{
+        scaleX:0,
+        opacity:1,
+         stagger:{
+           amount:0.6
+         },
+         ease:"back.out(1.5)"
+       })
+       .from(".domain-section .icon__text",{
+        y:20,
+        stagger:{
+          amount:0.6
+        },
+        ease:"power2"
+       },"<0.3")
+       .from(".domain-section .icon__img",{
+        y:-20,
+        stagger:{
+          amount:0.6
+        },
+        ease:"power2"
+       },"<");
+
+       
+
+       new ScrollMagic.Scene({
+        triggerElement: ".domain-section .icons-wraaper",
+        triggerHook: 0.5
+      })
+        .setTween(domainTimelineBottom)
+        .addTo(controller);
+
+        //TECHNOLOGY SECTION TIMELINE
+
+        var techTimeline = gsap.timeline({defaults:{opacity:0}})
+        techTimeline
+        .from(".technology-section p",{
+          y:25,
+          duration:0.5,
+          ease:"power2"
+        })
+        .from(".technology-section .tech-box", {
+          stagger:{
+            amount:0.6
+          },
+          x:10,
+          ease: "power1"
+        })
+        
+        new ScrollMagic.Scene({
+          triggerElement: ".technology-section",
+        })
+          .setTween(techTimeline)
+          .addTo(controller);
+
+
+          //OUR TEAM SETION TIMLINE
+          var teamTimeline = gsap.timeline({defaults:{opacity:0}})
+          teamTimeline
+          .from(".team-member__img",{
+            stagger:{
+              amount:0.6
+            },
+            y:30,
+            ease:"back.out(1.7)"
+          })
+          .from(".team-member__img-bg", {
+            stagger:{
+              amount:0.3
+            },
+            ease:"power4"
+          },"<0.2")
+          .from(".team-member__details", {
+            stagger:{
+              amount:0.6
+            },
+          },"<0.1")
+          new ScrollMagic.Scene({
+            triggerElement: ".team-section",
+            triggerHook:0.2
+          })
+            .setTween(teamTimeline)
+            .addTo(controller);
+
+            //CLIENT TIMELINE
+            var clientTimeline = gsap.timeline({defaults:{opacity:0}})
+            clientTimeline
+            .from(".client-section .heading__secondary",{
+              y:25,
+              stagger:{amount:0.4},
+              ease:"power4",
+              delay:0.5
+            })
+            .from(".client-col",{
+              y:15,
+              stagger:{amount:0.4},
+              ease:"power4",
+              delay:0.3
+            },"<0.4")
+
+            new ScrollMagic.Scene({
+              triggerElement: ".client-section",
+            })
+              .setTween(clientTimeline)
+              .addTo(controller)
+
+              //FOOTER TIMELINE
+
+              var footerTimeline = gsap.timeline({defaults:{opacity:0}})
+              footerTimeline
+              .from(".footer .heading__tertiory",{
+                y:15,
+                ease:"power4"
+              })
+              .from(".form__group",{
+                y:15,
+                stagger:{
+                  amount:0.3
+                },
+                ease:"power2"
+              },"<0.2")
+
+              .from(".form__btn",{
+                y:15,
+                ease:"power4"
+              })
+              .from(".footer__contact-item",{
+                stagger:{
+                  amount:0.4
+                },
+                y:15,
+                ease:"power4"
+              },"<0.2")
+              new ScrollMagic.Scene({
+                triggerElement: ".footer",
+              })
+                .setTween(footerTimeline)
+                .addTo(controller)

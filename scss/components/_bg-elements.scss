@@ -106,6 +106,9 @@
         left: 0;
         z-index: 0;
         width: 40rem;
+        &--small{
+            width: 20rem;
+        }
     }
     &__circle-2{
         top: -6rem;
@@ -122,8 +125,15 @@
     }
     &__rect-2{
         bottom: 2rem;
-        width: 10rem;
+        width: 8rem;
         left: 0;
+        &--right{
+            right: 0;
+            left: auto;
+            top: 50%;
+            bottom: 0;
+            width: 6rem;
+        }
     }
     &__rect-3{
         top: 50%;

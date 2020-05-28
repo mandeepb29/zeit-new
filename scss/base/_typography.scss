@@ -46,19 +46,19 @@ h6 {
   font-weight: 800;
 }
 
-h1{
+h1 {
   font-size: 5rem;
 }
 
-h2{
+h2 {
   font-size: 3rem;
 }
 
-h3{
+h3 {
   font-size: 3rem;
 }
 
-h4{
+h4 {
   font-size: 2.5rem;
 }
 
@@ -67,13 +67,12 @@ h4{
   padding: 1rem;
   z-index: 4;
 
-
   &__primary {
     font-size: 20rem;
     font-weight: 700;
     letter-spacing: -1rem;
 
-    &--small{
+    &--small {
       font-size: 12rem;
       letter-spacing: -0.65rem;
     }
@@ -89,84 +88,92 @@ h4{
   }
 }
 
-
-.heading{
-  &__primary{
+.heading__part{
+  display: inline-block;
+  &:not(:last-child){
+    margin-right: 10px;
+  }
+}
+.heading {
+  &__primary {
+    word-spacing:0.5px;
     font-size: 6.5rem;
     letter-spacing: -0.15rem;
     margin-bottom: 4rem;
     position: relative;
     z-index: 10;
-    // &--big{
-    //   font-size: 8rem;
-    //   letter-spacing: -0.3rem;
-    // }
+    &--small {
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+
+      span {
+        display: inline-block;
+      }
+    }
   }
-  &__secondary{
+  &__secondary {
     font-size: 3.5rem;
     color: $color-light;
     letter-spacing: -0.05rem;
   }
-  &__tertiory{
+  &__tertiory {
     font-size: 1.8rem;
     color: $color-dark;
     opacity: 0.8;
   }
-  &__color{
+  &__color {
     position: relative;
     display: inline-block;
     font-size: 4rem;
     letter-spacing: -0.1rem;
     color: $color-dark;
-    &:not(:first-child){
+    &:not(:first-child) {
       margin-top: 2.5rem;
     }
-   
-    &--1{
-      &::after{
+
+    &--1 {
+      &::after {
         content: attr(data-text);
         position: absolute;
-        top:0;
-        left:0;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 0;
         overflow: hidden;
         color: transparent;
-        background-image: linear-gradient(to right ,  $color-blue-primary,  $color-purple-primary);
+        background-image: linear-gradient(
+          to right,
+          $color-blue-primary,
+          $color-purple-primary
+        );
         -webkit-background-clip: text;
         transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
 
-      &:hover::after{
+      &:hover::after {
         width: 100%;
       }
     }
   }
 }
 
-
-.p{
-  &__big{
+.p {
+  &__big {
     font-size: 1.8rem;
     font-weight: 800;
   }
-  &__grey{
+  &__grey {
     color: $color-grey;
   }
-  &__black{
+  &__black {
     color: $color-black;
   }
-  &__short{
+  &__short {
     max-width: 500px;
     margin: auto;
   }
 }
 
-.char-wrap{
-  margin-left: 2.1rem;
-}
-
-.char{
-  display: inline-block;
-  margin-right:-2.2rem;
+.char-wrap {
+  position: relative;
 }

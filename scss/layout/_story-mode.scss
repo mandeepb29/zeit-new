@@ -1,14 +1,7 @@
 .story-section-wrapper{
-//    height: 100vh;
-//     position: relative;
-//     overflow-x: hidden;
     width: 100%;
     z-index: 1000;
-    // scroll-snap-type: y mandatory;
-    // overflow-y: scroll;
-    // scroll-behavior: smooth;
-   // overflow-y: scroll;
-
+    
 
    &::-webkit-scrollbar {
     width: 0px;
@@ -28,7 +21,9 @@
     width: 100%;
     position: relative;
     //scroll-snap-align: start;
-
+    &__intro{
+        height: 100vh;
+    }
     &__1{
         background-color: $color-yellow-primary;
     }
