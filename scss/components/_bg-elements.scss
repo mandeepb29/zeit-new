@@ -1,6 +1,8 @@
 .bg-element{
     position: absolute;
-    transition: transform 1.5s ease-out;
+   &__transition{
+    transition: transform 0.2s ease-out;
+   }
     &__clock{
         top: 15%;
         left:15%;
@@ -24,20 +26,31 @@
             fill:$color-yellow-primary;
         }
     }
-    &__street-light{
-        top: 0;
+    // &__street-light{
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    // }
+
+    &__light-yellow-wave{
+        bottom: 0;
         left: 0;
         width: 100%;
+    }
+    &__lamp-only-left{
+        left: 5%;
+        bottom: 0;
     }
     &__bench{
         bottom: 0;
         right: 0;
         transform: rotateY(180deg);
         filter: grayscale(1);
+        width: 35rem;
     }
     &__white-light{
         top: 0;
-        left: 2rem;
+        left: 0rem;
         
         transform: translateY(-20%);
 
@@ -58,18 +71,13 @@
     }
     &__dove1{
         left: 5%;
-        top: 15rem;
+        top: 0;
         filter: brightness(5);
-
-        svg{
-            width: 40rem;
-        }
     }
     &__dove2{
-        top: 8rem;
-        right: 10%;
+        top: 15rem;
+        right: 3%;
         filter: brightness(5);
-
     }
     &__plant3{
         bottom: 0;
@@ -98,7 +106,7 @@
         width: 15rem;
     }
     &__lamp-only{
-        right: 0;
+        right: -200px;
         bottom: 0;
     }
     &__circle-1{
@@ -136,7 +144,7 @@
         }
     }
     &__rect-3{
-        top: 50%;
+        top: -10vh;
         width: 15rem;
         right: 0;
     }
@@ -147,8 +155,8 @@
         width: 100%;
     }
 &__custom-circle{
-    width: 15rem;
-    height: 15rem;
+    width: 10rem;
+    height: 10rem;
     background-color: $color-white;
     border-radius: 50%;
     opacity: 0.4;
@@ -163,19 +171,20 @@
 }
 
 &__custom-square{
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     background-color: $color-yellow-primary;
     opacity: 0.7;
     right: 15rem;
     top: -5rem;
+    
 }
 &__custom-triangle{
-    width: 13rem;
-    height: 11rem;
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    background-color: $color-blue-primary;
-    opacity: 0.5;
+    width: 10rem;
+    height: 10rem;
+   // clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    background-color: $color-yellow-light;
+    opacity: 0.8;
     left: 15rem;
     bottom: -5rem;
 }
@@ -186,6 +195,7 @@
     border-bottom: 1.5px solid $color-white;
     width: 100%;
     margin-top: 8rem;
+    z-index: 10;
 
     .bg-element__vase{
         right: 0;

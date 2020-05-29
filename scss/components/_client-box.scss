@@ -6,18 +6,26 @@
     border-radius: 0.4rem;
     height: 100%;
     border:1px solid $color-yellow-dark;
-    
+    transition: all 0.3s;
     @include flex-all-center;
     &__row{
         margin-top: 5rem;
     }
     &__img{
         height: 6.5rem;
-        //filter: grayscale(1);
+        transition: all 0.3s;
         width: auto;
 
         &--small{
             height: 6.5rem;
+        }
+    }
+    &:hover{
+        background-color: $color-yellow-primary;
+        transform: translateY(-1rem);
+        box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+        .client__img{
+            filter: grayscale(1);
         }
     }
 }

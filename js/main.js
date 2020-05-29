@@ -251,18 +251,14 @@ var updateTransformStyle = function (x, y, item) {
   item.style.msTransform = style;
   item.style.oTransform = style;
 };
-//-------------------------------------------------------------------//
 
-// for(let i=1;i<=3;i++){
-//   let container = document.getElementById(`team-member-${i}`);
-//   console.log(container);
-//   mouse.setOrigin(container);
-// }
+//---------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------GSAP ANIMATIONS BEGINS-------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------//
 
-//register gsap plugins
-//gsap.registerPlugin(CSSRulePlugin);
-
+//-------------------------------------------------------------------------//
 //naviagtion timeLine
+//-------------------------------------------------------------------------//
 const navTimeline = gsap.timeline({ paused: true });
 navTimeline
   .to(".menu-wrap", 0.6, {
@@ -315,6 +311,7 @@ const toggleMenu = () => {
   }
 };
 
+//EVENTS LISTENERS TO THE MENU ANIMATIONS
 elements.toggleMenuBtn.addEventListener("click", toggleMenu);
 menuLinksArr.forEach((e) => {
   e.addEventListener("click", (event) => {
@@ -323,6 +320,8 @@ menuLinksArr.forEach((e) => {
     navTimeline.reverse();
   });
 });
+
+///-------------------SCROLL ANIMATIONS BEGINS-------------------------------------///
 
 //SCROLL MAGIC INITIALISATION
 var controller = new ScrollMagic.Controller();
@@ -345,7 +344,11 @@ animatedHeadingsSectionArr.forEach((el) => {
     .addTo(controller);
 });
 
+//-------------------------------------------------------------------------//
 //about timeline
+//-------------------------------------------------------------------------//
+
+//ABOUT TOP TIMELINE
 var aboutTimelineTop = new gsap.timeline({ defaults: { opacity: 0 } });
 aboutTimelineTop.from(
   ".about-section .counter-box__item",
@@ -355,14 +358,13 @@ aboutTimelineTop.from(
   },
   "-=0.4s"
 );
-
-//tigger about scene top
 new ScrollMagic.Scene({
   triggerElement: ".about-section",
 })
   .setTween(aboutTimelineTop)
   .addTo(controller);
 
+//ABOUT BOTTOM TIMELINE
 aboutTimelineBottom = new gsap.timeline({ defaults: { opacity: 0 } });
 aboutTimelineBottom
   .from(".about-section .heading__tertiory", {
@@ -392,8 +394,6 @@ aboutTimelineBottom
     },
     "<0.1s"
   );
-
-//tigger about scene bottom
 new ScrollMagic.Scene({
   triggerElement: "#about-bottom",
   triggerHook: 0.7,
@@ -401,7 +401,9 @@ new ScrollMagic.Scene({
   .setTween(aboutTimelineBottom)
   .addTo(controller);
 
+//-------------------------------------------------------------------------//
 //HOW WE WORK SECTION INTRO TIMELINE
+//-------------------------------------------------------------------------//
 var howWeWorkTimeline = gsap.timeline({
   defaults: { opacity: 0, duration: 0.5 },
 });
@@ -448,7 +450,9 @@ new ScrollMagic.Scene({
   .setTween(howWeWorkTimeline)
   .addTo(controller);
 
-//story section timeline
+//-------------------------------------------------------------------------//
+//story section COMMON timeline
+//-------------------------------------------------------------------------//
 storySectionsArr.forEach((el) => {
   let headings = el.querySelectorAll(".heading__part");
   let texts = el.querySelector("p");
@@ -489,49 +493,9 @@ storySectionsArr.forEach((el) => {
     .addTo(controller);
 });
 
-//STORY SECTIONS BACKGROUND ELEMENTS INDIVIDUAL TIMLINES
-
-//story section-1 elements timeline
-var story1Timeline = gsap.timeline();
-story1Timeline.from(".bg-element__street-light", {
-  y: -50,
-  ease: "power2",
-  duration: 1,
-});
-new ScrollMagic.Scene({
-  triggerElement: ".story-section__1",
-})
-  .setTween(story1Timeline)
-  .addTo(controller);
-
-  //story section-2 elements timeline
-  var story2Timeline = gsap.timeline();
-  story2Timeline.from(".bg-element__bench", {
-    x: 50,
-    ease: "power2",
-    duration: 0.3,
-  });
-  new ScrollMagic.Scene({
-    triggerElement: ".story-section__3",
-    triggerHook:1
-  })
-    .setTween(story2Timeline)
-    .addTo(controller);
-
-  //story section-2 elements timeline
-  var story3Timeline = gsap.timeline({defaults:{duration:0.2}});
-  story3Timeline.from(".bg-element__white-light", {
-    y:"-100%",
-    ease: "back.out(1.7)",
-    
-  });
-  new ScrollMagic.Scene({
-    triggerElement: ".story-section__3"
-  })
-    .setTween(story3Timeline)
-    .addTo(controller);
+//-------------------------------------------------------------------------//
 //DOMAIN SECTION TOP TIMLINE
-
+//-------------------------------------------------------------------------//
 var domainTimelineTop = gsap.timeline({ defaults: { opacity: 0 } });
 
 domainTimelineTop.from(
@@ -541,8 +505,7 @@ domainTimelineTop.from(
     ease: "power2",
   },
   "<0.2"
-)
-
+);
 
 new ScrollMagic.Scene({
   triggerElement: ".domain-section",
@@ -551,7 +514,9 @@ new ScrollMagic.Scene({
   .setTween(domainTimelineTop)
   .addTo(controller);
 
+//-------------------------------------------------------------------------//
 //DOMAIN SECTION BOTTOM TIMLINE
+//-------------------------------------------------------------------------//
 var domainTimelineBottom = gsap.timeline({ defaults: { opacity: 0 } });
 
 domainTimelineBottom
@@ -584,8 +549,7 @@ domainTimelineBottom
       ease: "power2",
     },
     "<"
-  )
-
+  );
 
 new ScrollMagic.Scene({
   triggerElement: ".domain-section .icons-wraaper",
@@ -594,7 +558,9 @@ new ScrollMagic.Scene({
   .setTween(domainTimelineBottom)
   .addTo(controller);
 
+//-------------------------------------------------------------------------//
 //TECHNOLOGY SECTION TIMELINE
+//-------------------------------------------------------------------------//
 var techTimeline = gsap.timeline({ defaults: { opacity: 0 } });
 techTimeline
   .from(".technology-section p", {
@@ -616,16 +582,27 @@ new ScrollMagic.Scene({
   .setTween(techTimeline)
   .addTo(controller);
 
+//-------------------------------------------------------------------------//
 //OUR TEAM SETION TIMLINE
+//-------------------------------------------------------------------------//
+
 var teamTimeline = gsap.timeline({ defaults: { opacity: 0 } });
 teamTimeline
+.from(
+  ".bg-element__circle-3",
+  {
+    y:"-30%",
+    ease: "power4",
+    delay:0.6
+  }
+)
   .from(".team-member__img", {
     stagger: {
       amount: 0.6,
     },
     y: 30,
     ease: "back.out(1.7)",
-  })
+  },"<")
   .from(
     ".team-member__img-bg",
     {
@@ -647,20 +624,32 @@ teamTimeline
   );
 new ScrollMagic.Scene({
   triggerElement: ".team-section",
-  triggerHook: 0.2,
+  triggerHook: 0.5,
 })
   .setTween(teamTimeline)
   .addTo(controller);
 
+//-------------------------------------------------------------------------//
 //CLIENT TIMELINE
+//-------------------------------------------------------------------------//
+
 var clientTimeline = gsap.timeline({ defaults: { opacity: 0 } });
 clientTimeline
+.from(
+  ".bg-element__circle-2",
+  {
+    y:"-30%",
+    rotate:45,
+    ease: "power1",
+    duration:0.5
+  }
+)
   .from(".client-section .heading__secondary", {
     y: 25,
     stagger: { amount: 0.4 },
     ease: "power4",
     delay: 0.5,
-  })
+  },"<")
   .from(
     ".client-col",
     {
@@ -670,7 +659,8 @@ clientTimeline
       delay: 0.3,
     },
     "<0.4"
-  );
+  )
+ ;
 
 new ScrollMagic.Scene({
   triggerElement: ".client-section",
@@ -678,7 +668,9 @@ new ScrollMagic.Scene({
   .setTween(clientTimeline)
   .addTo(controller);
 
+//-------------------------------------------------------------------------//
 //FOOTER TIMELINE
+//-------------------------------------------------------------------------//
 
 var footerTimeline = gsap.timeline({ defaults: { opacity: 0 } });
 footerTimeline
@@ -712,52 +704,195 @@ footerTimeline
       ease: "power4",
     },
     "<0.2"
-  );
+  )
+  .from(
+    ".bg-element__circle-1",
+    {
+      y: "-100%",
+      duration:0.8,
+      ease: "back.out(1.7)",
+    },"<"
+  )
 new ScrollMagic.Scene({
   triggerElement: ".footer",
 })
   .setTween(footerTimeline)
   .addTo(controller);
 
+//-------------------------------------------------------------------------//
+//ANMATIONS THAT MOVES WITH THE SCROLL
+//-------------------------------------------------------------------------//
 
-
-
-
-  var technologyBGTimeline = gsap.timeline();
-  technologyBGTimeline
-  .to(
-    ".bg-element__custom-square",
-    {
-      rotate:45,
-      y:"100vh"
-    }
-  )
+//TECHNOLOGY SECTION SCROLL ANIMATION
+var technologyBGTimeline = gsap.timeline();
+technologyBGTimeline
+.to(".bg-element__plant3", {
+  y: 300,
+})
+  .to(".bg-element__custom-square", {
+    rotate: 45,
+    y: "100vh",
+  },"<")
   .to(
     ".bg-element__custom-triangle",
     {
-      rotate:120,
-      y:"-150vh"
-    }
-    ,"<"
+      rotate: 120,
+      y: "-150vh",
+    },
+    "<"
   )
   .to(
     ".bg-element__custom-circle--1",
     {
-      y:"50vh"
-    }
-    ,"<"
+      y: "50vh",
+    },
+    "<"
   )
   .to(
     ".bg-element__custom-circle--2",
     {
-      y:"-50vh"
-    }
-    ,"<"
-  )
-  new ScrollMagic.Scene({
-    triggerElement: ".domain-section",
-    triggerHook:1
-  })
+      y: "-50vh",
+    },
+    "<"
+  );
+new ScrollMagic.Scene({
+  triggerElement: ".domain-section",
+  triggerHook: 1,
+})
   .duration("350%")
-    .setTween(technologyBGTimeline)
+  .setTween(technologyBGTimeline)
+  .addTo(controller);
+
+//TECHNOLOGY SECTION SCROLL ANIMATION
+  var teamBGTimeline = gsap.timeline();
+  teamBGTimeline
+  .to(".bg-element__rect-3", {
+    y: "80vh",
+  })
+  .to(".bg-element__rect-2", {
+    y: "-100vh",
+  },"<0.2")
+  ;
+  new ScrollMagic.Scene({
+    triggerElement: ".team-section",
+    triggerHook: 1,
+  })
+    .duration("280%")
+    .setTween(teamBGTimeline)
     .addTo(controller);
+
+
+//FOOTER SECTION SCROLL ANIMATION
+var footerBGTimeline = gsap.timeline();
+footerBGTimeline
+    .to(
+      ".bg-element__lamp-only",
+      {
+        x: -400,
+      }
+    );
+    new ScrollMagic.Scene({
+      triggerElement: ".footer",
+      triggerHook: 1,
+    })
+      .duration("300%")
+      .setTween(footerBGTimeline)
+      .addTo(controller);
+
+      //STORY SECTION 1 SCROLL ANIMAITON
+      var story1BG = gsap.timeline();
+      story1BG
+          .to(
+            ".bg-element__lamp-only-left",
+            {
+              y: 400,
+            }
+          );
+          new ScrollMagic.Scene({
+            triggerElement: ".story-section__1",
+            triggerHook: 0,
+          })
+            .duration("300%")
+            .setTween(story1BG)
+            .addTo(controller);
+
+            //STORY SECTION 2 SCROLL ANIMAITON
+      var story2BG = gsap.timeline();
+      story2BG
+          .to(
+            ".bg-element__bench",
+            {
+              x: "100%",
+            }
+          );
+          new ScrollMagic.Scene({
+            triggerElement: ".story-section__2",
+            triggerHook: 0,
+          })
+            .duration("200%")
+            .setTween(story2BG)
+            .addTo(controller);
+
+            //STORY SECTION 3 SCROLL ANIMAITON
+      var story3BG = gsap.timeline();
+      story3BG
+          .to(
+            ".bg-element__white-light",
+            {
+              x: "100%",
+            }
+          )
+          .from(
+            ".bg-element__vase",
+            {
+              x: -500,
+            },"<"
+          );
+          new ScrollMagic.Scene({
+            triggerElement: ".story-section__3",
+            triggerHook: 1,
+          })
+            .duration("180%")
+            .setTween(story3BG)
+            .addTo(controller);
+
+             //STORY SECTION 4 SCROLL ANIMAITON
+      var story4BG = gsap.timeline();
+      story4BG
+          .to(
+            ".bg-element__plant-bottom",
+            {
+              y: "100%",
+            }
+          );
+          new ScrollMagic.Scene({
+            triggerElement: ".story-section__4",
+            triggerHook: 0,
+          })
+            .duration("180%")
+            .setTween(story4BG)
+            .addTo(controller);
+
+              //STORY SECTION 5 SCROLL ANIMAITON
+      var story5BG = gsap.timeline();
+      story5BG
+          .to(
+            ".bg-element__dove1",
+            {
+              y: 500,
+            }
+          )
+          .to(
+            ".bg-element__dove2",
+            {
+              y: -100,
+              x:-80
+            },"<"
+          );
+          new ScrollMagic.Scene({
+            triggerElement: ".story-section__5",
+            triggerHook: 1,
+          })
+            .duration("200%")
+            .setTween(story5BG)
+            .addTo(controller);

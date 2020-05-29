@@ -3,6 +3,7 @@
     min-height: 100vh;
     position: relative;
     padding: $section-padding;
+    overflow: hidden;
 
     &__content{
         margin-top: 6rem;

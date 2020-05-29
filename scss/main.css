@@ -629,10 +629,13 @@ h4 {
 
 .bg-element {
   position: absolute;
-  -webkit-transition: -webkit-transform 1.5s ease-out;
-  transition: -webkit-transform 1.5s ease-out;
-  transition: transform 1.5s ease-out;
-  transition: transform 1.5s ease-out, -webkit-transform 1.5s ease-out;
+}
+
+.bg-element__transition {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 .bg-element__clock {
@@ -662,10 +665,15 @@ h4 {
   fill: #ffcb4f;
 }
 
-.bg-element__street-light {
-  top: 0;
+.bg-element__light-yellow-wave {
+  bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.bg-element__lamp-only-left {
+  left: 5%;
+  bottom: 0;
 }
 
 .bg-element__bench {
@@ -675,11 +683,12 @@ h4 {
           transform: rotateY(180deg);
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
+  width: 35rem;
 }
 
 .bg-element__white-light {
   top: 0;
-  left: 2rem;
+  left: 0rem;
   -webkit-transform: translateY(-20%);
           transform: translateY(-20%);
 }
@@ -702,18 +711,14 @@ h4 {
 
 .bg-element__dove1 {
   left: 5%;
-  top: 15rem;
+  top: 0;
   -webkit-filter: brightness(5);
           filter: brightness(5);
 }
 
-.bg-element__dove1 svg {
-  width: 40rem;
-}
-
 .bg-element__dove2 {
-  top: 8rem;
-  right: 10%;
+  top: 15rem;
+  right: 3%;
   -webkit-filter: brightness(5);
           filter: brightness(5);
 }
@@ -753,7 +758,7 @@ h4 {
 }
 
 .bg-element__lamp-only {
-  right: 0;
+  right: -200px;
   bottom: 0;
 }
 
@@ -799,7 +804,7 @@ h4 {
 }
 
 .bg-element__rect-3 {
-  top: 50%;
+  top: -10vh;
   width: 15rem;
   right: 0;
 }
@@ -812,8 +817,8 @@ h4 {
 }
 
 .bg-element__custom-circle {
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   background-color: #fff;
   border-radius: 50%;
   opacity: 0.4;
@@ -830,8 +835,8 @@ h4 {
 }
 
 .bg-element__custom-square {
-  width: 10rem;
-  height: 10rem;
+  width: 7rem;
+  height: 7rem;
   background-color: #ffcb4f;
   opacity: 0.7;
   right: 15rem;
@@ -839,12 +844,10 @@ h4 {
 }
 
 .bg-element__custom-triangle {
-  width: 13rem;
-  height: 11rem;
-  -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
-          clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  background-color: #090ea6;
-  opacity: 0.5;
+  width: 10rem;
+  height: 10rem;
+  background-color: #fffbec;
+  opacity: 0.8;
   left: 15rem;
   bottom: -5rem;
 }
@@ -854,6 +857,7 @@ h4 {
   border-bottom: 1.5px solid #fff;
   width: 100%;
   margin-top: 8rem;
+  z-index: 10;
 }
 
 .vase-stand .bg-element__vase {
@@ -1042,6 +1046,8 @@ h4 {
   border-radius: 0.4rem;
   height: 100%;
   border: 1px solid #ffc325;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1059,6 +1065,8 @@ h4 {
 
 .client__img {
   height: 6.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   width: auto;
 }
 
@@ -1066,11 +1074,25 @@ h4 {
   height: 6.5rem;
 }
 
+.client:hover {
+  background-color: #ffcb4f;
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.client:hover .client__img {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
 .footer {
   background-color: #080505;
   min-height: 100vh;
   position: relative;
   padding: 8rem 12rem;
+  overflow: hidden;
 }
 
 .footer__content {
@@ -1605,9 +1627,7 @@ h4 {
 
 .story-section__2 {
   background-color: #fffbec;
-  margin-top: -50vh;
-  padding-top: 60vh;
-  height: 150vh;
+  padding-top: 10rem;
 }
 
 .story-section__3 {
