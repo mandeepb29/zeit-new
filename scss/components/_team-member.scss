@@ -1,16 +1,19 @@
 .team-member{
     display: flex;
+    //flex-direction: column;
     margin-bottom: 4rem;
     margin-top: 2rem;
+    position: relative;
+
+    
     &__img{
-        text-align: center;
         z-index: 2;
         position: relative;
        // margin-left: 1rem;
 
         img{
-            height: 350px;
-            min-width: 250px;
+            height: 300px;
+            min-width: 200px;
             object-fit: cover;
             object-position: top center;
             position: relative;
@@ -19,20 +22,19 @@
         }
 
         &-bg{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -1;
-        top: 5%;
-        left: 5%;
-        transform-origin: left;
-        background-color: $color-yellow-dark;
-        transition:transform 0.3s;
-        }
+            width: 200px;
+            height: 100%;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            transform-origin: left ;
+            background-color: $color-yellow-dark;
+            transition:all 0.3s;
+            }
 
         &:hover{
-            .team-member__img-bg{
-                transform: scaleX(2);
+            ~ .team-member__img-bg{
+               width: 100%;
             }
              ~ .team-member__details > .team-member__details--name {
                     color: $color-white;
@@ -51,7 +53,7 @@
 
         &--name{
             color: $color-yellow-dark;
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: 700;
             position: relative;
             z-index: 2;
@@ -60,7 +62,7 @@
         }
         &--designation{
             margin-top: 2rem;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: $color-dark;
             position: relative;
             z-index: 2;

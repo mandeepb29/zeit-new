@@ -5,11 +5,11 @@
     background-color: $color-yellow-light;
     @include flex-all-center;
 }
-
+.section{
+    @include flex-all-center;
+}
 .domain-section{
     background-color: $color-dark;
-    padding-bottom: 25rem;
-
 }
 
 .technology-section{
@@ -23,7 +23,6 @@
 
 .client-section{
     background-color: $color-yellow-light;
-    min-height: 100vh;
 
     a{
         height: 100%;

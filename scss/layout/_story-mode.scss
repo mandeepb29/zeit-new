@@ -1,21 +1,4 @@
-.story-section-wrapper{
-    width: 100%;
-    z-index: 1000;
-    
 
-   &::-webkit-scrollbar {
-    width: 0px;
-  }
-  
-}
-.story-scrollable-content{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transition:  transform 400ms;
-}
 .story-section{
     height: 100vh;
     width: 100%;
@@ -29,20 +12,20 @@
     }
     &__2{
         background-color: $color-yellow-light;
-        padding-top: 10rem;
+       // padding-top: 10rem;
     }
     &__3{
         background-color: $color-yellow-primary;
-        padding-top: 25vh;
+       // padding-top: 25vh;
     }
     &__4{
         background-color: $color-yellow-light;
-        padding-top: 20vh;
-        height: 110vh;
+       // padding-top: 20vh;
+       // height: 110vh;
     }
     &__5{
         background-color: $color-yellow-primary;
-        padding-top: 25vh;
+        //padding-top: 25vh;
     }
 }
 
@@ -53,7 +36,7 @@
     //     margin-top: 15vh;
     // }
     &__4{
-        margin-top: 20vh;
+        //margin-top: 20vh;
     }
 }
 

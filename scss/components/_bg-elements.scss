@@ -1,7 +1,7 @@
 .bg-element{
     position: absolute;
    &__transition{
-    transition: transform 0.2s ease-out;
+    transition: transform 0.3s ease-out;
    }
     &__clock{
         top: 15%;
@@ -38,7 +38,7 @@
         width: 100%;
     }
     &__lamp-only-left{
-        left: 5%;
+        left: -5%;
         bottom: 0;
     }
     &__bench{
@@ -107,7 +107,7 @@
     }
     &__lamp-only{
         right: -200px;
-        bottom: 0;
+        bottom: -5rem;
     }
     &__circle-1{
         top: 0;

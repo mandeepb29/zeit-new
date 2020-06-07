@@ -2,25 +2,44 @@
     &,&:visited,&:link{
         outline: none;
         padding: 1rem 3rem;
-        font-weight: 800;
+        font-weight: 700;
         letter-spacing: -0.2px;
         font-size: 1.8rem;
         border-radius: 0;
         margin-top: 2rem;
         transition: all .3s;
     }
-    
-
     &__primary{
         background-color: $color-yellow-dark;
         color: $color-dark;
     }
+    &__welcome{
+        color: $color-yellow-dark !important;
+        letter-spacing: 0;
+        background-color: $color-white;
+    }
+    &__shadow{
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    &__rounded{
+        border-radius: 10rem !important;
+
+    }
     &:hover{
         transform: translateY(-4px);
-        box-shadow: 0 1rem 1.5rem 0.2rem rgba($color-black,1);
+        box-shadow: 0 1rem 1.5rem 0.2rem rgba($color-black,0.2);
     }
     &:focus,&:active{
         transform: translateY(2px);
-        box-shadow: 0 0.5rem 0.8rem 0.4rem rgba($color-black,1);
+        box-shadow: 0 0.5rem 0.8rem 0.4rem rgba($color-black,0.2);
+    }
+    &__dark-bg{
+        &:hover{
+            box-shadow: 0 1rem 1.5rem 0.2rem rgba($color-black,1);
+        }
+        &:focus,&:active{
+            box-shadow: 0 0.5rem 0.8rem 0.4rem rgba($color-black,1);
+        }
     }
 }
