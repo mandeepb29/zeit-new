@@ -21,6 +21,33 @@
     <div class="cursor">
       <div class="cursor__bg"></div>
     </div>
+
+    <!--story-buttons-->
+  <div class="story-section__buttons text-center">
+    <a class="btn btn__animate btn__with-img btn__shadow btn__rounded" onclick="goToNextSection()">
+      <span class="text">
+        <span class="text__start">
+          Start
+        </span>
+        <span class="text__next">
+          Next
+        </span>
+        <span class="text__seemore">
+          See More
+        </span>
+      </span>
+       <img src="./assets/img/icons/arrow.svg" alt="start" class="btn__img ml-3">
+    </a>
+  </div>
+
+  <!--whatsapp contact button-->
+  <div class="floating-contact-btn">
+    <a href="https://wa.link/kw96hx" target="_blank">
+        Contact us on
+
+        <img src="./assets/img/icons/whatsapp.svg" alt="">
+    </a>
+  </div>
  <!--NAVIGATATION MENU-->
  <nav class="navbar">
   <a href="#home" class="logo cursor--link--big hover-item anchor-link">
@@ -68,7 +95,7 @@
             </li>
             <li class="menu__link">
               <a href="#contact" class="cursor--link--big hover-item anchor-link">
-                Contact
+                Talk to us
               </a>
             </li>
           </ul>
@@ -85,10 +112,10 @@
                 Phone
               </p>
               <a
-                href="tel: +91-78457-45785"
+                href="tel:+91-73897-98831"
                 class="contact__item-value cursor--link--medium"
               >
-                +91-78457-45785
+                +91-73897-98831
               </a>
             </li>
             <li class="contact__item">
@@ -105,23 +132,12 @@
           </ul>
           <ul class="social">
             <li class="social__link">
-              <a href="" class="cursor--link--medium hover-item">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                Instagram
+              <a href="https://www.linkedin.com/in/atharvamungee10/" target="_blank" class="cursor--link--medium hover-item">
+                <img src="./assets/img/icons/linkedin.svg" alt="linkedin" class="icon icon__header">
+                Linkedin
               </a>
             </li>
-            <li class="social__link">
-              <a href="" class="cursor--link--medium hover-item">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                Twitter
-              </a>
-            </li>
-            <li class="social__link">
-              <a href="" class="cursor--link--medium hover-item">
-                <i class="fa fa-github" aria-hidden="true"></i>
-                Github
-              </a>
-            </li>
+           
           </ul>
         </div>
       </div>
@@ -143,11 +159,11 @@
       We’re the software design and engineering team that can bring it to
       life.
     </h2>
-    <div class="welcome-wrap">
-      <a class="btn btn__welcome btn__shadow btn__rounded anchor-link" onclick="$('.scroll-container').moveDown()">
-        Know More
-      </a>
-    </div>
+  </div>
+  <div class="absolute-bottom text-center">
+    <a class="btn btn__animate btn__shadow btn__rounded" onclick="goToNextSection()">
+      Know More
+    </a>
   </div>
   <div class="particles-container">
     <!--circles -->
@@ -357,7 +373,6 @@
   </section>
 
   <!--STORY SECTION WRAPPER-->
- 
     <!--INTRO SECTION-->
     <section class="section story-section story-section__intro how-we-work-intro" id="how-we-work">
       <div class="intro-heading">
@@ -891,20 +906,20 @@
                      
                       <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
                         <div class="icon__tech">
-                          <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/html.png" alt="angular"></div>
-                          <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--html"><img src="assets/img/technologies/html-5.svg" alt="angular"></div>
+                          <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/html.png" alt="html"></div>
+                          <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--html"><img src="assets/img/technologies/html.png" alt="html"></div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
                       <div class="icon__tech">
-                        <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/css.png" alt="angular"></div>
-                        <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--css"><img src="assets/img/technologies/css.svg" alt="angular"></div>
+                        <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/css.png" alt="css"></div>
+                        <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--css"><img src="assets/img/technologies/css.png" alt="css"></div>
                       </div>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
                     <div class="icon__tech">
-                      <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/javascript.svg" alt="angular"></div>
-                      <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--js"><img src="assets/img/technologies/javascript-full.svg" alt="angular"></div>
+                      <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/javascript.svg" alt="javascript"></div>
+                      <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--js"><img src="assets/img/technologies/js.svg" alt="javascript"></div>
                     </div>
                 </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
@@ -916,32 +931,32 @@
                  
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
                   <div class="icon__tech">
-                    <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/mongo-full.png" alt="angular"></div>
-                    <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--mongo"><img src="assets/img/technologies/mongo.png" alt="angular"></div>
+                    <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/mongo-full.png" alt="mongodb"></div>
+                    <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--mongo"><img src="assets/img/technologies/mongo.png" alt="mongodb"></div>
                   </div>
               </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
                   <div class="icon__tech">
-                    <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/node-full.png" alt="angular"></div>
-                    <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--node"><img src="assets/img/technologies/node.svg" alt="angular"></div>
+                    <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/node-full.png" alt="nodejs"></div>
+                    <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--node"><img src="assets/img/technologies/node.svg" alt="nodejs"></div>
                   </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
                 <div class="icon__tech">
-                  <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/sass.png" alt="angular"></div>
-                  <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--sass"><img src="assets/img/technologies/sass-full.png" alt="angular"></div>
+                  <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/sass.png" alt="sass"></div>
+                  <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--sass"><img src="assets/img/technologies/sass-full.png" alt="sass"></div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
               <div class="icon__tech">
-                <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/tensor-full.png" alt="angular"></div>
-                <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--tensor"><img src="assets/img/technologies/Tensor.png" alt="angular"></div>
+                <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/tensor-full.png" alt="tensorflow"></div>
+                <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--tensor"><img src="assets/img/technologies/Tensor.png" alt="tensorflow"></div>
               </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-6 tech-box">
             <div class="icon__tech">
-              <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/keras-full.png" alt="angular"></div>
-              <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--keras"><img src="assets/img/technologies/keras.png" alt="angular"></div>
+              <div class="icon__tech-img icon__tech-img--top"><img src="assets/img/technologies/keras-full.png" alt="keras"></div>
+              <div class="icon__tech-img icon__tech-img--bottom icon__tech-img--keras"><img src="assets/img/technologies/keras.png" alt="keras"></div>
             </div>
         </div>
                   </div>
@@ -1144,9 +1159,12 @@
                 <img src="./assets/img/icons/phone.svg" alt="address" class="icon icon__footer">
               </div>
               <div class="col-10">
-                <div class="footer__contact-item-text">
-                  +91-46578-56576
-                </div>
+                <a href="tel:+91-73897-98831">
+                  <div class="footer__contact-item-text">
+                    +91-73897-98831
+                  </div>
+                </a>
+                
               </div>
             </div>
           </div>
@@ -1156,9 +1174,11 @@
                 <img src="./assets/img/icons/mail.svg" alt="address" class="icon icon__footer">
               </div>
               <div class="col-10">
+                <a href="mailto:meetzeit@zeit.in">
                 <div class="footer__contact-item-text">
                   meetzeit@zeit.in
                 </div>
+                </a>
               </div>
             </div>
           </div>
@@ -1168,9 +1188,11 @@
                 <img src="./assets/img/icons/linkedin.svg" alt="address" class="icon icon__footer">
               </div>
               <div class="col-10">
+                <a href="https://www.linkedin.com/in/atharvamungee10/" target="_blank">
                 <div class="footer__contact-item-text">
                  Linked in
                 </div>
+              </a>
               </div>
             </div>
           </div>
@@ -1216,7 +1238,7 @@
     <script src="./assets/js/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="./assets/js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
     <script src="./assets/js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
-    <script src="./assets/js/fullpage.js"></script>
+    <!-- <script src="./assets/js/fullpage.js"></script> -->
     <script src="./assets/js/jquery.onepage-scroll.min.js"></script>
     <script src="js/main.js"></script>
     <script>

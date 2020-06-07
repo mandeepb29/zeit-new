@@ -13,10 +13,89 @@
         background-color: $color-yellow-dark;
         color: $color-dark;
     }
-    &__welcome{
+    &__img{
+        width: 1.8rem;
+        transition: transform .5s;
+    }
+    &__with-img{
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+       
+        .text{
+            position: relative;
+            &__start{
+                display: inline-block;
+            }
+            &__next{
+                display: none;
+            }
+            &__seemore{
+                display: none;
+            }
+            span{
+                animation: fade_up 500ms cubic-bezier(0.77, 0, 0.175, 1) alternate;
+            }
+        }
+
+    &.show-next-text{
+        .text__start{
+            display: none;
+        }
+        .text__next{
+            display: inline-block;
+        }
+        .text__seemore{
+            display: none;
+        }
+        img{
+            transform: rotate(90deg);
+        }
+    }
+    &.show-seemore-text{
+        .text__start{
+            display: none;
+        }
+        .text__next{
+            display: none;
+        }
+        .text__seemore{
+            display: inline-block;
+        }
+    }
+
+    }
+   
+   
+    &__animate{
         color: $color-yellow-dark !important;
         letter-spacing: 0;
         background-color: $color-white;
+        overflow: hidden;
+        position: relative;
+        z-index: 20;
+        border: 0;
+
+        &::after{
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            top:0;
+            left: 0;
+            z-index: -1;
+            background-color: $color-yellow-dark;
+            transform: translateY(100%);
+            transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+
+        &:hover{
+            color: $color-white !important;
+            &::after{
+                transform: translateY(0);
+            }
+        }
+
     }
     &__shadow{
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -42,4 +121,36 @@
             box-shadow: 0 0.5rem 0.8rem 0.4rem rgba($color-black,1);
         }
     }
+}
+
+.floating-contact-btn{
+    position: fixed;
+    left: 0;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20%) rotate(-90deg);
+    
+    a{
+        color: $color-dark-1;
+        font-weight: 700;
+        font-size: 2rem;
+        @include flex-all-center;
+
+        img{
+            width: 2rem;
+            margin-left:1rem;
+        }
+
+        &:hover{
+            text-decoration: underline !important;
+        }
+    }
+
+    &.is-black{
+        a{
+            color: $color-yellow-dark;
+        }
+    }
+
+    
 }
