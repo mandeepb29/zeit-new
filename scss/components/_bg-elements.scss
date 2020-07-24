@@ -7,15 +7,41 @@
         top: 15%;
         left:15%;
         width:12rem;
+
+        @include responsive(sm){
+            left: 80%;
+             width:10rem;
+         }
+        @include responsive(xs){
+            width:8rem;
+        }
     }
     &__plant{
         bottom: 15rem;
         left: 15%;
         width: 15rem;
+
+        @include responsive(lg){
+            display: none;
+        }
     }
+
     &__light{
-        right: 10%;
+        right: 10vw;
         top: -7rem;
+
+        @include responsive(lg){
+            top: -10rem;
+            
+        }
+
+        @include responsive(md){
+            right: 0%;
+        }
+        @include responsive(sm){
+            right: 50%;
+        }
+        
     }
     &__downwave{
         bottom: 0;
@@ -45,7 +71,7 @@
         bottom: 0;
         right: 0;
         filter: grayscale(1);
-        width: 35rem;
+        width: 28rem;
     }
     &__white-light{
         top: 0;

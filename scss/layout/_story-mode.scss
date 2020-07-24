@@ -4,6 +4,14 @@
     width: 100%;
     position: relative;
     //scroll-snap-align: start;
+
+    @include responsive(md){
+        padding: 10rem 0;
+    }
+
+    @include responsive(xs){
+        padding: 7rem 0;
+    }
     &__intro{
         height: 100vh;
     }
@@ -43,11 +51,17 @@
 .story-img{
     position: relative;
     z-index: 10;
+    width: 80%;
+    max-width: 50rem;
     // &__2{
     //     margin-top: 15vh;
     // }
     &__4{
         margin-top: 10vh;
+    }
+
+    @include responsive(md){
+        margin-top: 5rem;
     }
 }
 

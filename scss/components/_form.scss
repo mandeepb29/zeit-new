@@ -1,6 +1,12 @@
 .form{
     position: relative;
     z-index: 10;
+    max-width: 50rem;
+    margin: auto;
+
+    @include responsive(md){
+        margin-bottom: 5rem;
+    }
     &__label{
         font-size: 1.8rem;
         font-weight: 600;

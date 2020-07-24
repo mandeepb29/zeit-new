@@ -152,5 +152,12 @@
         }
     }
 
+    @include responsive(md){
+        bottom: 2rem;
+        right: 4rem;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
     
 }

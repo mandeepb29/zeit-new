@@ -30,6 +30,7 @@
             transform-origin: left ;
             background-color: $color-yellow-dark;
             transition:all 0.3s;
+            z-index: 1;
             }
 
         &:hover{
@@ -72,3 +73,15 @@
        
     }
 }
+._3d-hover__item{
+    position: relative;
+}
+.helper {
+    color: white;
+    padding: 0.2em;
+    border-radius: 5%;
+    background-color: grey;
+    position: absolute;
+    z-index: 0;
+    display: none;
+  }

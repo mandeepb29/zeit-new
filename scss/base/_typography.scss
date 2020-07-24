@@ -72,9 +72,43 @@ h4 {
     font-weight: 700;
     letter-spacing: -1rem;
 
+    @include responsive(lg){
+      font-size: 18rem;
+    }
+
+    @include responsive(md){
+      font-size: 16rem;
+      letter-spacing: -0.9rem;
+    }
+
+    @include responsive(sm){
+      font-size: 14rem;
+      letter-spacing: -0.8rem;
+    }
+
+    @include responsive(xs){
+      font-size: 10rem;
+      letter-spacing: -0.6rem;
+    }
+
     &--small {
       font-size: 12rem;
       letter-spacing: -0.65rem;
+
+      @include responsive(lg){
+        font-size: 10rem;
+        letter-spacing: -0.4rem;
+      }
+
+      @include responsive(sm){
+        font-size: 8rem;
+        letter-spacing: -0.3rem;
+      }
+
+      @include responsive(xs){
+        font-size: 6rem;
+        letter-spacing: -0.2rem;
+      }
     }
   }
 
@@ -82,6 +116,7 @@ h4 {
     color: $color-black;
     font-size: 2rem;
     font-weight: 600;
+    width: 75%;
     max-width: 700px;
     line-height: 1.5;
     margin: auto;
@@ -95,6 +130,8 @@ h4 {
   }
 }
 .heading {
+  position: relative;
+  z-index: 10;
   &__primary {
     word-spacing:0.5px;
     font-size: 6.5rem;
@@ -110,6 +147,8 @@ h4 {
       }
     }
   }
+
+
   &__secondary {
     font-size: 3.5rem;
     color: $color-light;
@@ -126,9 +165,9 @@ h4 {
     font-size: 4rem;
     letter-spacing: -0.1rem;
     color: $color-dark;
-    &:not(:first-child) {
-      margin-top: 2.5rem;
-    }
+    
+      margin-top: 1.5rem;
+    
 
     &--1 {
       &::after {
@@ -152,6 +191,33 @@ h4 {
       &:hover::after {
         width: 100%;
       }
+    }
+
+    @include responsive(lg){
+      font-size: 3.5rem;
+      margin-top: 3rem;
+    }
+
+    @include responsive(md){
+      font-size: 3rem;
+      margin-top: 4rem;
+    }
+
+    @include responsive(xs){
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &-md{
+    display: none !important;
+  }
+  @include responsive(md){
+    &-lg{
+      display: none !important;
+    }
+    &-md{
+      display: block !important;
     }
   }
 }

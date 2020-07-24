@@ -7,29 +7,64 @@
 
   &__primary{
     padding: 2rem;
+    position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
+    transition: $transition-secondary;
     background-color: darken($color-dark, 3%);
     z-index: 10;
+
+    &::after{
+      content: "";
+      position: absolute;
+      height: 0;
+      transition: $transition-secondary;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background-color: $color-yellow-dark;
+    }
+
+    &:hover{
+      &::after{
+        height: 100%;
+      }
+      .icon{
+       
+        &__img{
+          filter: brightness(0);
+        }
+        &__text{
+          color: $color-dark;
+        }
+      }
+    }
+      
+    
   }
 
   &__border {
     height: 1.5px;
     width: 100%;
-    background-color: $color-yellow-primary;
+    background-color: $color-yellow-dark;
     position: absolute;
     bottom: 0;
-    transform-origin: center;
     left: 0;
   }
 
   &__img {
     width: 50%;
+    position: relative;
+    z-index: 2;
+    transition: $transition-secondary;
     filter: brightness(0) invert(1);
   }
   &__text {
     font-weight: 700;
+    position: relative;
+    z-index: 2;
     font-size: 2rem;
+    transition: $transition-secondary;
     color: $color-yellow-dark;
   }
 
@@ -76,7 +111,7 @@
           background-color: #e44d26;
         }
         &--css{
-          background-color: #264de4;          ;
+          background-color: #264de4;          
         }
         &--js{
           background-color: #f7df1e;

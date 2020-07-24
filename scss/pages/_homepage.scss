@@ -10,11 +10,18 @@
 }
 .domain-section{
     background-color: $color-dark;
+
+    @include responsive(lg){
+        padding-bottom: 20rem;
+    }
 }
 
 .technology-section{
     background-color: $color-dark-1;
    
+    @include responsive(lg){
+        padding: 6rem 0 10rem;
+    }
 }
 
 .team-section{
