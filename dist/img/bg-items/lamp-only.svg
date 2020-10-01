@@ -1,0 +1,19 @@
+<svg width="386" height="463" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="filter0_f" x="88.952" y="0" width="280.961" height="284.228" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="37"/>
+  </filter>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="388" height="465" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path stroke="null" d="m236.121,170.256999l-11.377,0l0,325.359014l11.377,-4.489471l0,-320.869543z" fill="#191716" id="svg_2"/>
+  <g opacity="0.4" filter="url(#filter0_f)" id="svg_3">
+   <path d="m230.433,211.228c36.716,0 66.48,-30.496 66.48,-68.114c0,-37.618 -29.764,-68.114 -66.48,-68.114c-36.717,0 -66.481,30.496 -66.481,68.114c0,37.618 29.764,68.114 66.481,68.114z" fill="#fff2b5" id="svg_4"/>
+  </g>
+  <path d="m230.432,184.177c22.036,0 39.899,-18.302 39.899,-40.879c0,-22.576 -17.863,-40.878 -39.899,-40.878c-22.035,0 -39.898,18.302 -39.898,40.878c0,22.577 17.863,40.879 39.898,40.879z" fill="#DFE8F4" id="svg_5"/>
+ </g>
+</svg>
