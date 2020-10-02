@@ -931,7 +931,7 @@ new ScrollMagic.Scene({
   .addTo(controller);
 
 new ScrollMagic.Scene({
-  triggerElement: ".team-section",
+  triggerElement: ".client-section",
   triggerHook: 0,
 })
   .on("start", function () {
