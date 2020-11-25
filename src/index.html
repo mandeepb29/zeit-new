@@ -11,10 +11,9 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/onepage-scroll.css">
+    <!-- <link rel="stylesheet" href="assets/css/onepage-scroll.css"> -->
   </head>
   <body>
-
 
     <!--CUSTOM CURSOR-->
     <div class="cursor">
@@ -23,7 +22,7 @@
 
     <!--story-buttons-->
   <div class="story-section__buttons text-center">
-    <a class="btn btn__animate btn__with-img btn__shadow btn__rounded" onclick="goToNextSection()">
+    <a class="btn btn__animate btn__with-img btn__shadow btn__rounded" id="next-section-btn">
       <span class="text">
         <span class="text__start">
           Start
@@ -145,7 +144,6 @@
   </div>
 </nav>
 <div class="scroll-container">
-
 <main>
 <!--HEADER OF THE WEBSITE-->
 <header class="section header" id="home">
@@ -1220,8 +1218,7 @@
     <script src="./js/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="./js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
     <script src="./js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
-    <!-- <script src="./js/main.js"></script> -->
-    <!-- <script src="./js/jquery.onepage-scroll.min.js"></script> -->
+    <!-- <script src="./js/jquery.onepage-scroll.min.js"></script>
     <script>
       $(".scroll-container").onepage_scroll({
    sectionContainer: ".section",     // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -1239,12 +1236,7 @@
                                     // the browser's width is less than 600, the fallback will kick in.
    direction: "vertical",            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
    scrollOverflowReset: true
-});
+}); -->
     </script>
-    <!-- <script type="text/javascript">
-      var myFullpage = new fullpage('#fullpage',{
-        scrollBar: true
-      });
-    </script> -->
   </body>
 </html>

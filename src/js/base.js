@@ -6,8 +6,8 @@ export const elements = {
     animatedHeadingsSection: document.querySelectorAll(
       ".section-heading-animate"
     ),
-    body: document.querySelector('body'),
-    anchorTag: document.querySelector('a'),
+    body: document.querySelector("body"),
+    anchorTag: document.querySelector("a"),
     //hoverContainer: document.querySelectorAll(".hover-this"),
     hoverItem: document.querySelectorAll(".hover-item"),
     cursor: document.querySelector(".cursor"),
@@ -22,17 +22,33 @@ export const elements = {
     techIcons: document.querySelectorAll(".shape__tech"),
     storyContainer: document.querySelector(".story-section-wrapper"),
     storyScrollableContainer: document.querySelector(".story-scrollable-content"),
+    // cursorLinksBigArr: Array.from(this.cursorLinksBig),
+    // cursorLinksMediumArr: Array.from(this.cursorLinksMedium),
+    // cursorLinksTinyArr: Array.from(this.cursorLinksTiny),
+    // techIconsArr: Array.from(this.techIcons),
+    // menuLinksArr: Array.from(this.menuLinks),
+    // introTextArr: Array.from(elements.introText),
+    // hoverItemArr: Array.from(elements.hoverItem),
+    // _3dHoverContainerArr: Array.from(elements._3dHoverContainer),
+    // _3dHoverItemArr: Array.from(elements._3dHoverItem),
+    // storySectionsArr: Array.from(elements.storySections),
+    // animatedHeadingsSectionArr: Array.from(elements.animatedHeadingsSection),
     //colorHeadings:document.querySelectorAll(".heading__color")
-};
+  };  
 
-cursorLinksBigArr = Array.from(elements.cursorLinksBig);
-cursorLinksMediumArr = Array.from(elements.cursorLinksMedium);
-cursorLinksTinyArr = Array.from(elements.cursorLinksTiny);
-techIconsArr = Array.from(elements.techIcons);
-menuLinksArr = Array.from(elements.menuLinks);
-introTextArr = Array.from(elements.introText);
-hoverItemArr = Array.from(elements.hoverItem);
-_3dHoverContainerArr = Array.from(elements._3dHoverContainer);
-_3dHoverItemArr = Array.from(elements._3dHoverItem);
-storySectionsArr = Array.from(elements.storySections);
-animatedHeadingsSectionArr = Array.from(elements.animatedHeadingsSection);
+//SCROLL MAGIC INITIALISATION
+export const controller = new ScrollMagic.Controller();
+
+export const is_touch_device = ()=> {
+  console.log("touch enabled: ",'ontouchstart' in window ) ||  
+  ( navigator.maxTouchPoints > 0 ) ||  
+  ( navigator.msMaxTouchPoints > 0 )
+    return ( 'ontouchstart' in window ) ||  
+           ( navigator.maxTouchPoints > 0 ) ||  
+           ( navigator.msMaxTouchPoints > 0 ); 
+           
+}
+
+export const goToNextSection =() => {
+  $(".scroll-container").moveDown();
+}

@@ -1,4 +1,11 @@
 //functions to manipulate hover element
+var counter = 0;
+var updateRate = 10;
+var isTimeToUpdate = function () {
+  // console.log(counter);
+  return counter++ % updateRate === 0;
+};
+
 function hoverEffect(e, item) {
     const { offsetX: x, offsetY: y } = e,
       { offsetWidth: width, offsetHeight: height } = item,
@@ -9,34 +16,18 @@ function hoverEffect(e, item) {
     item.style.transform = `translate(${xMove}px, ${yMove}px)`;
   }
   
-  var onMouseEnterHandler1 = function (event) {
+ export var onMouseEnterHandler = function (event) {
     hoverEffect(event, this);
   };
   
-  var onMouseLeaveHandler1 = function () {
+ export var onMouseLeaveHandler = function () {
     this.style.transform = "";
   };
   
-  var onMouseMoveHandler1 = function (event) {
+  export var onMouseMoveHandler = function (event) {
     //console.log("mouse move",this);
     if (isTimeToUpdate()) {
       hoverEffect(event, this);
     }
   };
   
-  hoverItemArr.forEach((b) =>{
-    if(!is_touch_device())
-    b.addEventListener("mouseenter", onMouseEnterHandler1)
-  }
-  );
-  hoverItemArr.forEach((b) =>{
-    if(!is_touch_device())
-    b.addEventListener("mouseleave", onMouseLeaveHandler1)
-  }
-  );
-  hoverItemArr.forEach((b) =>
-  {
-    if(!is_touch_device())
-    b.addEventListener("mousemove", onMouseMoveHandler1)
-  }
-  );

@@ -1,8 +1,8 @@
+import {elements} from '../base';
 //-------------------------------------------------------------------------//
 //naviagtion timeLine
 //-------------------------------------------------------------------------//
-
-const navTimeline = gsap.timeline({ paused: true });
+export const navTimeline = gsap.timeline({ paused: true });
 navTimeline
   .to(".menu-wrap", 0.6, {
     top: "0%",
@@ -38,7 +38,7 @@ navTimeline
     "-=0.5"
   );
 
-  const toggleMenu = () => {
+  export const toggleMenu = () => {
     if (elements.toggleMenuBtn.classList.contains("toggled")) {
       elements.toggleMenuBtn.classList.remove("toggled");
     } else {
@@ -53,13 +53,3 @@ navTimeline
       navTimeline.reverse();
     }
   };
-  
-  //EVENTS LISTENERS TO THE MENU ANIMATIONS
-  elements.toggleMenuBtn.addEventListener("click", toggleMenu);
-  menuLinksArr.forEach((e) => {
-    e.addEventListener("click", (event) => {
-      event.preventDefault();
-      elements.toggleMenuBtn.classList.remove("toggled");
-      navTimeline.reverse();
-    });
-  });
