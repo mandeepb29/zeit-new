@@ -52,7 +52,7 @@
             transition: all 0.4s;
 
             @include responsive(md){
-               // font-size: 4rem;
+               font-size: 4rem;
             }
         }
         &-text{

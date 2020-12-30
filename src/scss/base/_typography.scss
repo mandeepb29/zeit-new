@@ -31,9 +31,11 @@
 
 body {
   font-family: Gilroy;
-  font-size: $default-font-size;
+ @include adjust-font;
   font-weight: 600;
-  line-height: 1.7;
+  line-height: 1.8;
+
+  
 }
 
 h1,
@@ -83,12 +85,12 @@ h4 {
 
     @include responsive(sm){
       font-size: 14rem;
-      letter-spacing: -0.8rem;
+      letter-spacing: -0.7rem;
     }
 
     @include responsive(xs){
       font-size: 10rem;
-      letter-spacing: -0.6rem;
+      letter-spacing: -0.5rem;
     }
 
     &--small {
@@ -120,13 +122,18 @@ h4 {
     max-width: 700px;
     line-height: 1.5;
     margin: auto;
+
+    @include responsive(md){
+      font-size: 2.5rem;
+    }
+
   }
 }
 
 .heading__part{
   display: inline-block;
   &:not(:last-child){
-    margin-right: 10px;
+    margin-right: 1rem;
   }
 }
 .heading {
@@ -224,11 +231,16 @@ h4 {
 p{
   z-index: 1;
   position: relative;
+  @include adjust-font;
 }
 .p {
   &__big {
     font-size: 1.8rem;
     font-weight: 800;
+
+    @include responsive(sm){
+      font-size: 2.2rem;
+    }
   }
   &__grey {
     color: $color-grey;

@@ -6,6 +6,7 @@
     justify-content: center;
  }
 
+
  //MEDIA QUERY MANAGER - (takes the size of the screen and return the media query code)
 
 @mixin responsive($break-point){
@@ -41,3 +42,14 @@
 }
 
 
+
+@mixin adjust-font {
+    font-size: 1.6rem;
+    @include responsive(md){
+        font-size: 1.8rem;
+      }
+    
+      @include responsive(sm){
+        font-size: 2rem;
+      }
+ }

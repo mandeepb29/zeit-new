@@ -7,6 +7,7 @@ var isTimeToUpdate = function () {
 };
 
 function hoverEffect(e, item) {
+  
     const { offsetX: x, offsetY: y } = e,
       { offsetWidth: width, offsetHeight: height } = item,
       move = 30,

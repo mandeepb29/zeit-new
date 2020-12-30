@@ -56,8 +56,13 @@
     width: 50%;
     position: relative;
     z-index: 2;
+    margin-bottom: 1.5rem;
     transition: $transition-secondary;
     filter: brightness(0) invert(1);
+
+    @include responsive(sm){
+      margin-bottom: 2.2rem;
+    }
   }
   &__text {
     font-weight: 700;

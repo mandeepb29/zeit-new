@@ -91,7 +91,7 @@ teamBGTimeline
   .to(
     ".bg-element__rect-2",
     {
-      y: "-100vh",
+      y: "-80vh",
     },
     "<0.2"
   );
@@ -116,7 +116,7 @@ new ScrollMagic.Scene({
   .setTween(footerBGTimeline)
   .addTo(controller);
 
-  //TECHNOLOGY SECTION SCROLL ANIMATION
+  //DOMAIN SECTION SCROLL ANIMATION
 export var domainBGTimeline = gsap.timeline();
 domainBGTimeline
   .to(".bg-element__plant3", {
@@ -126,7 +126,7 @@ domainBGTimeline
     ".bg-element__custom-square",
     {
       rotate: -150,
-      y: "130vh",
+      y: "80rem",
     },
     "<"
   )
@@ -134,21 +134,21 @@ domainBGTimeline
     ".bg-element__custom-triangle",
     {
       rotate: 150,
-      y: "-150vh",
+      y: "-90rem",
     },
     "<"
   )
   .to(
     ".bg-element__custom-circle--1",
     {
-      y: "20vh",
+      y: "30rem",
     },
     "<"
   )
   .to(
     ".bg-element__custom-circle--2",
     {
-      y: "-50vh",
+      y: "-40rem",
     },
     "<"
   );

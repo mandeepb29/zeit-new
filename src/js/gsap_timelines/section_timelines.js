@@ -12,12 +12,22 @@ aboutTimelineTop.from(
   },
   "-=0.4s"
 );
+
+if(screen.width < 1199.99){
 new ScrollMagic.Scene({
   triggerElement: ".about-section",
+  triggerHook: 0.75,
 })
   .setTween(aboutTimelineTop)
   .addTo(controller);
-
+}
+else{
+  new ScrollMagic.Scene({
+    triggerElement: ".about-section",
+  })
+    .setTween(aboutTimelineTop)
+    .addTo(controller);
+}
 //ABOUT BOTTOM TIMELINE
 export var aboutTimelineBottom = new gsap.timeline({ defaults: { opacity: 0 } });
 aboutTimelineBottom
@@ -48,13 +58,23 @@ aboutTimelineBottom
     },
     "<0.1s"
   );
+   if(screen.width < 1199.99){
 new ScrollMagic.Scene({
   triggerElement: "#about-bottom",
   triggerHook: 0.7,
 })
   .setTween(aboutTimelineBottom)
   .addTo(controller);
-
+   }
+   else{
+    new ScrollMagic.Scene({
+      triggerElement: "#about-bottom",
+      triggerHook: 0.785,
+    })
+      .setTween(aboutTimelineBottom)
+      .addTo(controller);
+       }
+   
 
 //-------------------------------------------------------------------------//
 //HOW WE WORK SECTION INTRO TIMELINE
@@ -98,13 +118,21 @@ export var howWeWorkTimeline = gsap.timeline({
       "<"
     );
   
+    if(screen.width < 1199.99){
   new ScrollMagic.Scene({
     triggerElement: ".how-we-work-intro",
-    //triggerHook: 0,
+    triggerHook: 0.75,
   })
     .setTween(howWeWorkTimeline)
     .addTo(controller);
-
+    }
+    else{
+      new ScrollMagic.Scene({
+        triggerElement: ".how-we-work-intro"
+      })
+        .setTween(howWeWorkTimeline)
+        .addTo(controller);
+    }
     //-------------------------------------------------------------------------//
 //DOMAIN SECTION TOP TIMLINE
 //-------------------------------------------------------------------------//
@@ -119,13 +147,22 @@ domainTimelineTop.from(
   "<0.2"
 );
 
+if(screen.width < 1199.99){
 new ScrollMagic.Scene({
   triggerElement: ".domain-section",
-  triggerHook: 0,
+  triggerHook: 0.75,
 })
   .setTween(domainTimelineTop)
   .addTo(controller);
-
+}
+else{
+  new ScrollMagic.Scene({
+    triggerElement: ".domain-section",
+    triggerHook: 0,
+  })
+    .setTween(domainTimelineTop)
+    .addTo(controller);
+}
 //-------------------------------------------------------------------------//
 //DOMAIN SECTION BOTTOM TIMLINE
 //-------------------------------------------------------------------------//
@@ -174,13 +211,22 @@ domainTimelineBottom
     "<"
   );
 
+  if(screen.width < 1199.99){
 new ScrollMagic.Scene({
   triggerElement: ".domain-section",
-  triggerHook: 0.2,
+  triggerHook: 0.75,
 })
   .setTween(domainTimelineBottom)
   .addTo(controller);
-
+  }
+  else{
+    new ScrollMagic.Scene({
+      triggerElement: ".domain-section",
+      triggerHook: 0.2,
+    })
+      .setTween(domainTimelineBottom)
+      .addTo(controller);
+  }
   //-------------------------------------------------------------------------//
 //TECHNOLOGY SECTION TIMELINE
 //-------------------------------------------------------------------------//
@@ -204,7 +250,7 @@ new ScrollMagic.Scene({
 })
   .setTween(techTimeline)
   .addTo(controller);
-
+  
   //-------------------------------------------------------------------------//
 //OUR TEAM SETION TIMLINE
 //-------------------------------------------------------------------------//
@@ -246,12 +292,23 @@ teamTimeline
     },
     "<0.1"
   );
+
+  if(screen.width < 1199.99){
 new ScrollMagic.Scene({
   triggerElement: ".team-section",
-  triggerHook: 0.5,
+  triggerHook: 0.8,
 })
   .setTween(teamTimeline)
   .addTo(controller);
+}
+else{
+  new ScrollMagic.Scene({
+    triggerElement: ".team-section",
+    triggerHook: 0.5,
+  })
+    .setTween(teamTimeline)
+    .addTo(controller);
+}
   //-------------------------------------------------------------------------//
 //CLIENT TIMELINE
 //-------------------------------------------------------------------------//
@@ -285,12 +342,22 @@ clientTimeline
     "<0.4"
   );
 
+
+  if(screen.width < 1199.99){
 new ScrollMagic.Scene({
   triggerElement: ".client-section",
+  triggerHook:0.75
 })
   .setTween(clientTimeline)
   .addTo(controller);
-
+  }
+  else{
+    new ScrollMagic.Scene({
+      triggerElement: ".client-section",
+    })
+      .setTween(clientTimeline)
+      .addTo(controller);
+  }
   //-------------------------------------------------------------------------//
 //FOOTER TIMELINE
 //-------------------------------------------------------------------------//
@@ -337,9 +404,19 @@ footerTimeline
     },
     "<"
   );
+
+  if(screen.width < 1199.99){
 new ScrollMagic.Scene({
-  triggerElement: ".footer",
-  triggerHook: 0.05,
+  triggerElement: ".footer"
 })
   .setTween(footerTimeline)
   .addTo(controller);
+}
+else{
+  new ScrollMagic.Scene({
+    triggerElement: ".footer",
+    triggerHook: 0.05,
+  })
+    .setTween(footerTimeline)
+    .addTo(controller);
+  }

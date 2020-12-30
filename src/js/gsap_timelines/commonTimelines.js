@@ -36,12 +36,26 @@ export const animateStories = () => {
         },
         "-=0.6"
       );
-    new ScrollMagic.Scene({
-      triggerElement: el,
-      triggerHook: 0.05,
-    })
-      .setTween(storyTimelineArray)
-      .addTo(controller);
+
+      if(screen.width < 1199.99){
+        new ScrollMagic.Scene({
+          triggerElement: el,
+          triggerHook: 0.5,
+        })
+        
+          .setTween(storyTimelineArray)
+          .addTo(controller);
+      }
+      else{
+        new ScrollMagic.Scene({
+          triggerElement: el,
+          triggerHook: 0.05,
+        })
+        
+          .setTween(storyTimelineArray)
+          .addTo(controller);
+      }
+   
   });
   
 }
@@ -60,11 +74,23 @@ export const animateHeadings = () => {
       },
       ease: "power4",
     });
-    new ScrollMagic.Scene({
-      triggerElement: el,
-    })
-      .setTween(headingsTimeline)
-      .addTo(controller);
+
+    if(screen.width < 1199.99){
+      new ScrollMagic.Scene({
+        triggerElement: el,
+        triggerHook:0.75
+      })
+        .setTween(headingsTimeline)
+        .addTo(controller);
+    }
+    else{
+      new ScrollMagic.Scene({
+        triggerElement: el,
+      })
+        .setTween(headingsTimeline)
+        .addTo(controller);
+    }
+   
   });
   
 }

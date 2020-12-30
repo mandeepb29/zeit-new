@@ -1,10 +1,15 @@
 .navbar{
-    padding: 2rem 4rem;
+    padding: 2rem 3rem;
     top: 0;
     left: 0;
     width: 100%;
     position: fixed;
     z-index: 1500;
+
+
+    @include responsive(md){
+        padding:3rem;
+    }
 
     .logo{
         position: relative;
@@ -35,6 +40,13 @@
        justify-content: space-between;
        flex-direction: column;
         cursor: pointer;
+
+        @include responsive(md){
+            padding:4rem;
+            height: 4rem;
+            width: 4rem;
+        }
+        
 
         span{
             position: absolute;
@@ -74,7 +86,11 @@
                 }
                 &.two{
                     transform: translateY(-6px) rotate(-45deg);
-                    width:3.5rem
+                    width:3.5rem;
+
+                    @include responsive(sm){
+                        transform: translateY(-4px) rotate(-45deg);
+                    }
                 }
             }
 
@@ -111,6 +127,7 @@
     background-color:$color-dark-1;
     z-index: 1000;
     padding: 8rem 4rem;
+    overflow-y: scroll;
 }
 
 .menu{

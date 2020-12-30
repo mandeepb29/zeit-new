@@ -2,6 +2,7 @@
     position: absolute;
    &__transition{
     transition: transform 0.3s ease-out;
+
    }
     &__clock{
         top: 15%;
@@ -39,7 +40,7 @@
             right: 0%;
         }
         @include responsive(sm){
-            right: 50%;
+            right: 10%;
         }
         
     }
@@ -59,40 +60,71 @@
     // }
 
     &__light-yellow-wave{
-        bottom: 0;
+        bottom: -1%;
         left: 0;
         width: 100%;
     }
     &__lamp-only-left{
-        left: -5%;
+        left: -7%;
         bottom: 0;
+
+        @include responsive(lg){
+            left: -15%;
+        }
+
+        @include responsive(md){
+            left: -15%;
+        }
+
+        @include responsive(sm){
+            left: -40%;
+            width: 85%;
+        }
     }
     &__bench{
         bottom: 0;
         right: 0;
         filter: grayscale(1);
         width: 28rem;
+
+        @include responsive(sm){
+            display: none;
+        }
     }
     &__white-light{
         top: 0;
-        left: 0rem;
+        left: 15rem;
         
         transform: translateY(-20%);
 
         svg{
             width: 35rem;
         }
+
+        @include responsive(sm){
+            top:-6%;
+            left: -15rem;
+        }
     }
     &__topwave{
-        top: 0;
+        top: -1%;
         left: 0;
         width: 100%;
         
+        @include responsive(md){
+            top:-3%;
+        }
     }
     &__plant-bottom{
         bottom: 0;
         right: 0;
         width: 30rem;
+        z-index: 20;
+        @include responsive(sm){
+            width: 35%;
+            right: auto;
+            left: 0;
+        }
     }
     &__dove1{
         left: 5%;
@@ -107,9 +139,15 @@
     &__plant3{
         bottom: 0;
         left: 5%;
+        z-index: 20;
         filter: grayscale(1);
         svg{
             width: 10rem;
+        }
+
+        @include responsive(sm){
+            left: auto;
+            right: 5%;
         }
     }
     &__black-wave{
@@ -121,6 +159,10 @@
             width: 100%;
             transform: rotateX(180deg);
             fill: $color-dark-1;
+        }
+
+        @include responsive(sm){
+            bottom: -2px;
         }
     }
     &__plant-gray{
@@ -167,11 +209,21 @@
             bottom: 0;
             width: 6rem;
         }
+
+        @include responsive(sm){
+            left: auto;
+            right: 0;
+        }
     }
     &__rect-3{
         top: -10vh;
         width: 15rem;
         right: 0;
+
+        @include responsive(sm){
+            left: 0;
+            right: auto;
+        }
     }
     &__linear-wave{
         bottom: 0;
@@ -186,32 +238,40 @@
     border-radius: 50%;
     opacity: 0.4;
     &--1{
-        right: 5rem;
-        top:10rem
+        right: 5vw;
+        top:15rem
     }
     &--2{
-        left: 5rem;
-        bottom:10rem
+        left: 5vw;
+        bottom:0vh;
+
+        @include responsive(sm){
+            bottom: -20vh;
+        }
     }
 }
 
-&__custom-square{
-    width: 7rem;
-    height: 7rem;
-    background-color: $color-yellow-primary;
-    opacity: 0.7;
-    right: 15rem;
-    top: -5rem;
-    
-}
 &__custom-triangle{
     width: 10rem;
     height: 10rem;
    // clip-path: polygon(50% 0, 100% 100%, 0 100%);
     background-color: $color-yellow-light;
     opacity: 0.8;
-    left: 15rem;
-    bottom: -5rem;
+    left: 12vw;
+    bottom: -25vh;
+
+    @include responsive(sm){
+        bottom: -40vh;
+    }
+}
+&__custom-square{
+    width: 7rem;
+    height: 7rem;
+    background-color: $color-yellow-primary;
+    opacity: 0.7;
+    right: 15vw;
+    top: -10rem;
+    
 }
 }
 

@@ -22,6 +22,10 @@
         align-items: center;
         justify-content: space-between;
        
+
+        @include responsive(md){
+            display: none;
+        }
         .text{
             position: relative;
             &__start{
@@ -160,4 +164,18 @@
         transform: none;
     }
     
+}
+
+#goNext{
+    @include responsive(lg){
+        display: none;
+    }
+}
+
+#goNextMobile{
+    display: none;
+
+    @include responsive(lg){
+        display: inline-block;
+    }
 }

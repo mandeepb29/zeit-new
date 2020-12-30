@@ -13,6 +13,7 @@ export const elements = {
     cursor: document.querySelector(".cursor"),
     header: document.querySelector(".header"),
     navbar: document.querySelector(".navbar"),
+    anchorLinks: document.querySelectorAll('.anchor-link'),
     introText: document.querySelectorAll(".intro-heading"),
     cursorLinksBig: document.querySelectorAll(".cursor--link--big"),
     cursorLinksMedium: document.querySelectorAll(".cursor--link--medium"),

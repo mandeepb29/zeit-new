@@ -52,38 +52,30 @@ introTextArr.forEach((e) => {
    e.addEventListener("mouseleave", cursor.removeBorderCursor);
 });
 
+
 //------------------------------------------------ HOVER EFFECT-------------------------------------------------//
   let hoverItemArr = Array.from(elements.hoverItem); 
   hoverItemArr.forEach((item) =>{
+     if(!is_touch_device())
    item.addEventListener("mouseenter",hoverEffect.onMouseEnterHandler)
  }
  );
  hoverItemArr.forEach((item) =>{
+   if(!is_touch_device())
    item.addEventListener("mouseleave", hoverEffect.onMouseLeaveHandler)
  }
  );
  hoverItemArr.forEach((item) =>
  {
+   if(!is_touch_device())
    item.addEventListener("mousemove", hoverEffect.onMouseMoveHandler)
  }
  );
-
 
 //------------------------------------------------GSAP TIMELINES-------------------------------------------------//
 //--common timelines--//
 commonTimelines.animateStories();
 commonTimelines.animateHeadings();
-
-//--section timelines --//
-// sectionTimeline.aboutTimelineTop();
-// sectionTimeline.aboutTimelineBottom();
-// sectionTimeline.howWeWorkTimeline();
-// sectionTimeline.domainTimelineTop();
-// sectionTimeline.domainTimelineBottom();
-// sectionTimeline.techTimeline();
-// sectionTimeline.teamTimeline();
-// sectionTimeline.clientTimeline();
-// sectionTimeline.footerTimeline();
 
 //--navigation timeline--//
   elements.toggleMenuBtn.addEventListener("click", toggleMenu);
@@ -102,3 +94,40 @@ commonTimelines.animateHeadings();
 
 //adding event listeners 
 document.getElementById('next-section-btn').addEventListener("click", goToNextSection);
+  
+let anchorLinksArr = Array.from(elements.anchorLinks);
+anchorLinksArr.forEach(el => el.addEventListener("click", (e) => {
+   if(screen.width >= 1199.98){
+      let page_index = $($(el).attr("href")).data("index");
+      let container = $(".scroll-container");
+      //console.log(page_index);
+      container.moveTo(page_index);
+   }
+   else{
+      console.log(el.hash);
+   // Make sure this.hash has a value before overriding default behavior
+    if (el.hash !== "") {
+      // 1
+      e.preventDefault();
+      // 2
+      const href = $(el).attr("href");
+      // 3
+      $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
+    } // End if
+   }
+}))
+
+ document.getElementById('goNext').addEventListener("click", goToNextSection);
+
+//toggling the cursor 
+window.onresize = toggleCursor;
+function toggleCursor(){
+   if(is_touch_device()){
+      elements.cursor.style.display = "none";
+   }
+   else{
+      elements.cursor.style.display = "block";
+   }
+}
+
+toggleCursor();
