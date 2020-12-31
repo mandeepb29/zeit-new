@@ -40,7 +40,7 @@ export const animateStories = () => {
       if(screen.width < 1199.99){
         new ScrollMagic.Scene({
           triggerElement: el,
-          triggerHook: 0.5,
+          triggerHook: 0.65,
         })
         
           .setTween(storyTimelineArray)

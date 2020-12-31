@@ -104,16 +104,10 @@ anchorLinksArr.forEach(el => el.addEventListener("click", (e) => {
       container.moveTo(page_index);
    }
    else{
-      console.log(el.hash);
-   // Make sure this.hash has a value before overriding default behavior
-    if (el.hash !== "") {
-      // 1
-      e.preventDefault();
-      // 2
-      const href = $(el).attr("href");
-      // 3
-      $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
-    } // End if
+      console.log("mobile nav - ",el.hash);
+      $('html, body').animate({
+         'scrollTop' : $($(el).attr("href")).position().top
+     },1000);
    }
 }))
 

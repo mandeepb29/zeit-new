@@ -30,6 +30,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
  cursor: none;
   position: relative;
   overflow-x: hidden;
@@ -37,12 +38,9 @@ body {
   transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
   @media (hover: none) and (pointer: coarse) {
-    cursor: auto;
+    cursor: default;
 }
 
-@include responsive(md){
-  cursor: auto;
-}
 }
 
 

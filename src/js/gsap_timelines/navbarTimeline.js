@@ -14,24 +14,24 @@ navTimeline
       opacity: 0,
       y: -20,
       stagger: {
-        amount: 0.6,
+        amount: 0.3,
       },
     },
-    "-=0.2"
+    "-=0.1"
   )
   .from(
     ".contact",
     {
-      duration: 0.6,
+      duration: 0.4,
       opacity: 0,
       y: -20,
     },
-    "-=1"
+    "-=0.5"
   )
   .from(
     ".social",
     {
-      duration: 0.6,
+      duration: 0.4,
       opacity: 0,
       y: -20,
     },
