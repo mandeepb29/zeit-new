@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const PurgecssPlugin = require('purgecss-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const glob = require('glob')
 const path = require("path");
 
@@ -21,6 +22,8 @@ module.exports = {
     new PurgecssPlugin({
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`,  { nodir: true }),
     }),
+
+    new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [
