@@ -1,14 +1,15 @@
 //importing bootstrap
 @import '~bootstrap/scss/bootstrap.scss';
+@import '../../assets/css/onepage-scroll.scss';
 
 @import './abstracts/functions';
 @import './abstracts/mixins';
 @import './abstracts/variables';
-
 @import  './base/base';
 @import './base/animations';
 @import './base/typography';
 @import './base/utilities';
+
 
 @import './components/cursor';
 @import './components/counter';

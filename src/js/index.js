@@ -107,7 +107,7 @@ anchorLinksArr.forEach(el => el.addEventListener("click", (e) => {
       console.log("mobile nav - ",el.hash);
       $('html, body').animate({
          'scrollTop' : $($(el).attr("href")).position().top
-     },1000);
+     });
    }
 }))
 

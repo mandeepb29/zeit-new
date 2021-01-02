@@ -22,6 +22,10 @@
                 font-size: 1.6rem;
                 font-weight: 600;
                 color: $color-yellow-light;
+
+                @include responsive(sm){
+                    font-size: 1.8rem;
+                }
             }
         }
     }

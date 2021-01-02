@@ -61,7 +61,7 @@ aboutTimelineBottom
    if(screen.width < 1199.99){
 new ScrollMagic.Scene({
   triggerElement: "#about-bottom",
-  triggerHook: 0.7,
+  triggerHook: 0.75,
 })
   .setTween(aboutTimelineBottom)
   .addTo(controller);

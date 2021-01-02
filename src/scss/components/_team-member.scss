@@ -88,8 +88,9 @@
             z-index: 2;
             transition:all 0.3s;
 
-            @include responsive(xs){
+            @include responsive(sm){
                 margin-top: 1.5rem;
+                font-size: 1.8rem;
             }
         }
 

@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+const glob = require('glob')
 const path = require("path");
 
 module.exports = {
@@ -15,12 +17,25 @@ module.exports = {
       filename: "index.html",
       template: "./src/index.html",
     }),
+
+    new PurgecssPlugin({
+      paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`,  { nodir: true }),
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.(scss|css)$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            },
+          },
+          "sass-loader"
+        ],
       },
       {
         test: /\.js$/,
@@ -30,7 +45,7 @@ module.exports = {
       {
         test: /\.(svg|gif|png|eot|woff|woff2|ttf)$/,
         loaders: ["url-loader"],
-      }
+      },
     ],
   },
 };

@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zeit Labs</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
+
+    <link rel="preload" as="style" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" onload="this.rel='stylesheet'" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous" /> 
+    <noscript ><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></noscript> 
+
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
   </head>
   <body>
-
     <!--CUSTOM CURSOR-->
     <div class="cursor">
       <div class="cursor__bg"></div>
@@ -1177,7 +1175,7 @@
         </div>
         <div class="col-lg-6 border-left-light order-first">
           <h1
-          class="heading__primary heading__primary--small text-center border-bottom-light cursor--link--big heading-md"
+          class="heading__primary heading__primary--small text-right border-bottom-light cursor--link--big heading-md"
         >
           <span class="text-white heading__part"
             >Lets talk about your</span
@@ -1218,7 +1216,7 @@
     <script src="./js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
     <script src="./js/jquery.onepage-scroll.min.js"></script>
     <script>
-      $(".scroll-container").onepage_scroll({
+    $(".scroll-container").onepage_scroll({
    sectionContainer: ".section",     // sectionContainer accepts any kind of selector in case you don't want to use section
    easing: "cubic-bezier(0.615, 0.000, 0.360, 0.985)",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
                                     // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"

@@ -43,7 +43,7 @@ export const toggleFixedBtn = () => {
 export const toggleHeader = () => {
   new ScrollMagic.Scene({
     triggerElement: ".domain-section",
-    triggerHook: 0,
+    triggerHook: 0.05,
   })
     .on("start", function () {
       $(".navbar").toggleClass("navbar-black");
@@ -52,7 +52,7 @@ export const toggleHeader = () => {
 
     new ScrollMagic.Scene({
       triggerElement: ".domain-section",
-      triggerHook: 1,
+      triggerHook: 0.96,
     })
       .on("start", function () {
         $(".floating-contact-btn").toggleClass("is-black");
@@ -61,7 +61,7 @@ export const toggleHeader = () => {
 
   new ScrollMagic.Scene({
     triggerElement: ".team-section",
-    triggerHook: 1,
+    triggerHook: 0.96,
   })
     .on("start", function () {
       $(".floating-contact-btn").toggleClass("is-black");
@@ -70,7 +70,7 @@ export const toggleHeader = () => {
 
     new ScrollMagic.Scene({
       triggerElement: ".team-section",
-      triggerHook: 0,
+      triggerHook: 0.05,
     })
       .on("start", function () {
         $(".navbar").toggleClass("navbar-black");
@@ -79,7 +79,7 @@ export const toggleHeader = () => {
 
       new ScrollMagic.Scene({
         triggerElement: ".footer",
-        triggerHook: 0,
+        triggerHook: 0.05,
       })
         .on("start", function () {
           $(".navbar").toggleClass("navbar-black");
@@ -88,7 +88,7 @@ export const toggleHeader = () => {
 
         new ScrollMagic.Scene({
           triggerElement: ".footer",
-          triggerHook: 1,
+          triggerHook: 0.98,
         })
           .on("start", function () {
             $(".floating-contact-btn").toggleClass("is-black");
