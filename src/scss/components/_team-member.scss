@@ -4,21 +4,26 @@
     margin-bottom: 4rem;
     margin-top: 2rem;
     position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
 
-
-    @include responsive(xs){
-        flex-direction: column;
-        align-items: center;
-        text-align:center;
-    }
+    // @include responsive(xs){
+    //     flex-direction: column;
+    //     align-items: center;
+    //     text-align:center;
+    // }
     
     &__img{
         z-index: 2;
         position: relative;
        // margin-left: 1rem;
         img{
-            height: 300px;
-            min-width: 200px;
+            min-height: 30rem;
+            min-width: 30rem;
+            max-height: 30rem;
+            max-width: 30rem;
+           border-radius: 50%;
             object-fit: cover;
             object-position: top center;
             position: relative;
@@ -28,33 +33,47 @@
         }
 
         &-bg{
-            width: 200px;
-            height: 100%;
+            min-height: 30rem;
+            min-width: 30rem;
+            max-height: 30rem;
+            max-width: 30rem;
+           border-radius: 50%;
             position: absolute;
-            top: 5%;
-            left: 5%;
+            top: -2vh;
+            left: 0vw;
             transform-origin: left ;
             background-color: $color-yellow-dark;
             transition:all 0.3s;
             z-index: 1;
 
+            // @include responsive(md){
+            //     top: -1%;
+            // left: 0.5%;
+            // }
+
+            @include responsive(md){
+                left: 3vw;
+            }
+
+            @include responsive(sm){
+                left: 18vw;
+            }
+
             @include responsive(xs){
-                display: none;
+                left: 15vw;
             }
             }
 
         &:hover{
             ~ .team-member__img-bg{
-               width: 110%;
+               width: 100%;
             }
              ~ .team-member__details > .team-member__details--name {
-                    color: $color-white;
+                color: $color-black;
                     transform: translateY(-2px);
                     text-shadow: 0 1rem 2rem rgba($color-black,0.3);
 
-                    @include responsive(xs){
-                        color: $color-black;
-                    }
+                    
                 }
 
 
