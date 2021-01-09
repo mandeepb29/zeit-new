@@ -6,6 +6,7 @@ import * as scrollTimeline from './gsap_timelines/scroll_based_gsap';
 import {toggleMenu,navTimeline} from './gsap_timelines/navbarTimeline';
 import * as hoverEffect from './hover_animations/moveAwayOnHover';
 import * as toggleAnimation from './gsap_timelines/toggle_animations';
+import * as IObserver from './lazy-load-image';
 
 //-------------------------------CURSOR ANIMATION---------------------------------------//
 //add cursor animation
@@ -124,4 +125,18 @@ function toggleCursor(){
    }
 }
 
+const options = {
+   rootMargin: "0px",
+   threshold: 0.3,
+ };
+ 
+  const observer = new IntersectionObserver(IObserver.handleIntersection, options);
+
+   const images = document.querySelectorAll('.lazy-img');
+
+    images.forEach(img => {
+      observer.observe(img);
+    })
+
 toggleCursor();
+

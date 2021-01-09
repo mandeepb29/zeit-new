@@ -23,18 +23,6 @@ export const elements = {
     techIcons: document.querySelectorAll(".shape__tech"),
     storyContainer: document.querySelector(".story-section-wrapper"),
     storyScrollableContainer: document.querySelector(".story-scrollable-content"),
-    // cursorLinksBigArr: Array.from(this.cursorLinksBig),
-    // cursorLinksMediumArr: Array.from(this.cursorLinksMedium),
-    // cursorLinksTinyArr: Array.from(this.cursorLinksTiny),
-    // techIconsArr: Array.from(this.techIcons),
-    // menuLinksArr: Array.from(this.menuLinks),
-    // introTextArr: Array.from(elements.introText),
-    // hoverItemArr: Array.from(elements.hoverItem),
-    // _3dHoverContainerArr: Array.from(elements._3dHoverContainer),
-    // _3dHoverItemArr: Array.from(elements._3dHoverItem),
-    // storySectionsArr: Array.from(elements.storySections),
-    // animatedHeadingsSectionArr: Array.from(elements.animatedHeadingsSection),
-    //colorHeadings:document.querySelectorAll(".heading__color")
   };  
 
 //SCROLL MAGIC INITIALISATION
