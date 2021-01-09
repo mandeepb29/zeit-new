@@ -30,8 +30,9 @@
 }
 
 body {
-  font-family: Gilroy;
+  font-family: Gilroy,sans-serif;
  @include adjust-font;
+
   font-weight: 600;
   line-height: 1.8;
 
@@ -44,7 +45,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Gilroy;
   font-weight: 800;
 }
 

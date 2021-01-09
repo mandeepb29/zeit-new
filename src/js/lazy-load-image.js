@@ -20,7 +20,7 @@ const fetchImage = (url) => {
   return new Promise((resolve, reject) => {
     const image = new Image();
     image.src = url;
-    console.log("Current image", url);
+    //console.log("Current image", url);
     image.onload = resolve;
     image.onerror = reject;
   });

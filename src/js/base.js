@@ -29,7 +29,7 @@ export const elements = {
 export const controller = new ScrollMagic.Controller();
 
 export const is_touch_device = ()=> {
-  console.log("touch enabled: ",'ontouchstart' in window ) ||  
+ // console.log("touch enabled: ",'ontouchstart' in window ) ||  
   ( navigator.maxTouchPoints > 0 ) ||  
   ( navigator.msMaxTouchPoints > 0 )
     return ( 'ontouchstart' in window ) ||  

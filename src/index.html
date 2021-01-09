@@ -7,11 +7,152 @@
 
     <link rel="preload" as="style" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" onload="this.rel='stylesheet'" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous" /> 
+   
     <noscript ><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></noscript> 
-
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <style>
+    .s-loader {
+  background: #fff;
+      position: fixed;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      z-index: 5000;
+      transition: all 0.3s cubic-bezier(.56,.01,.01,1);
+  animation: sky 4s infinite cubic-bezier(.56,.01,.01,1);
+}
+
+.s-loader.hide{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.blobs{
+  filter:url('#goo');
+  position: absolute;;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.one-s {
+  left: 50%;
+  animation: moon 4s infinite cubic-bezier(.56,.01,.01,1);
+}
+.four-s {
+  left: calc(50%);
+  transform: scale(0.5) translateX(-50%);
+  animation: loader 4s infinite cubic-bezier(.56,.01,.01,1);
+  filter: blur(10px);
+  opacity: 1 !important;
+  background:rgb(255, 195, 37) !important;
+}
+
+@-webkit-keyframes loader {
+  0% {transform: translate(100px, 0px) scale(0.9);}
+  25% {transform: translate(0rem, 0px) scale(0.9);}
+  50% {transform: translate(-100px, 0px) scale(0.9);}
+  75% {transform: translate(0rem, 0px) scale(0.9);}
+  100% {transform: translate(100px, 0px) scale(0.9);}
+}
+
+@-webkit-keyframes sky {
+  0% {background: #fffbec;}
+  /* 17.5% {background: #45403d} */
+  25% {background: #1b1b1b;}
+  50% {background: #fffbec;}
+  /* 67.5% {background: #45403d;} */
+  75% {background: #1b1b1b;}
+  100% {background: #fffbec;}
+}
+
+@-webkit-keyframes text-animation{
+  0% {color: #000000;}
+  /* 17.5% {background: #45403d} */
+  25% {color: #ffffff;}
+  50% {color: #000000;}
+  /* 67.5% {background: #45403d;} */
+  75% {color: #ffffff;}
+  100% {color: #000000;}
+}
+@-webkit-keyframes moon {
+  0% {background-position: 100% 50%;}
+  17% {background-position: 50% 50%;}
+  25% {background-position: 50% 50%;}
+  50% {background-position: 0% 50%;}
+  67% {background-position: 50% 50%;}
+  75% {background-position: 50% 50%;}
+  100% {background-position: 100% 50%;}
+}
+
+.blob{
+  position: fixed;
+    background: linear-gradient(90deg,rgb(255, 70, 37),rgb(255, 106, 37), rgb(255, 195, 37), #000000, #000000, rgb(255, 195, 37),rgb(255, 106, 37), rgb(255, 70, 37));
+    background-size: 1000% 1000%;
+    top: 25%;
+    width: 50px;
+    height: 50px;
+    /* transform: translateX(-50%); */
+    border-radius: 100%;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.s-text{
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.s-text h2{
+  font-weight: 700;
+  color: rgb(255, 195, 37);
+}
+
+.s-loading{
+  margin-top: 10px;
+  text-align: center;
+  animation: text-animation 4s infinite cubic-bezier(.56,.01,.01,1);
+}
+
+.norm {
+  filter: blur(1px);
+}
+  </style>
   </head>
   <body>
+    <!--LOADER-->
+    <div class="s-loader">
+      <div class="blobs">
+        <div class="blob four-s move"></div>
+        <div class="norm blob one-s"></div>
+      </div>
+<div class="s-text">
+  <h2>
+    Zeit Labs
+  </h2>
+
+
+  <p class="s-loading">
+    Loading..
+  </p>
+</div>
+      
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+
     <!--CUSTOM CURSOR-->
     <div class="cursor">
       <div class="cursor__bg"></div>
@@ -949,7 +1090,7 @@
         <div class="team-member">
           <div class="team-member__img cursor--link--tiny _3d-hover__container" id="team-member-1">
             <div class="_3d-hover__item">
-            <img class="lazy-img" src="./img/team/atharva-p.jpeg" data-src="./img/team/atharva.jpg" alt="">
+            <img class="lazy-img" src="./img/team/atharva-p.jpg" data-src="./img/team/atharva.jpg" alt="">
           </div>
           
           </div>
@@ -988,7 +1129,7 @@
         <div class="team-member">
           <div class="team-member__img cursor--link--tiny _3d-hover__container" id="team-member-3">
             <div class="_3d-hover__item">
-            <img class="lazy-img" src="./img/team/mohit-p.jpeg" data-src="./img/team/mohit.jpeg" alt="">
+            <img class="lazy-img" src="./img/team/mohit-p.jpg" data-src="./img/team/mohit.jpeg" alt="">
             </div>
           </div>
           <div class="team-member__img-bg"></div>
@@ -1035,21 +1176,21 @@
           <div class="col-md-4 col-6 text-center client-col">
             <a href="">
               <div class="client">
-                <img class="lazy-img" src="./img/picture-p.svg" data-src="./img/clients/onewater.png" alt="onewater" class="client__img">
+                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/onewater.png" alt="onewater" class="client__img">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
             <a href="">
               <div class="client">
-                <img class="lazy-img" src="./img/picture-p.svg" data-src="./img/clients/ruc.png" alt="ruc" class="client__img">
+                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/ruc.png" alt="ruc" class="client__img">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
             <a href="">
               <div class="client">
-                <img class="lazy-img" src="./img/picture-p.svg" data-src="./img/clients/youtern.png" alt="foreign_admits" class="client__img">
+                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/youtern.png" alt="foreign_admits" class="client__img">
               </div>
             </a>
           </div>
@@ -1057,21 +1198,21 @@
           <div class="col-md-4 col-6 text-center client-col">
             <a href="">
               <div class="client">
-                <img class="lazy-img" src="./img/picture-p.svg" data-src="./img/clients/foreign_admits.png" alt="foreign_admits" class="client__img">
+                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/foreign_admits.png" alt="foreign_admits" class="client__img">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
             <a href="">
               <div class="client">
-                <img class="lazy-img" src="./img/picture-p.svg" data-src="./img/clients/draymon.png" alt="gujrati_samaj" class="client__img client__img--small">
+                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/draymon.png" alt="gujrati_samaj" class="client__img client__img--small">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
             <a href="">
               <div class="client">
-                <img class="lazy-img" src="./img/picture-p.svg" data-src="./img/clients/twistmobiles.png" alt="twistmobiles" class="client__img client__img--small">
+                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/twistmobiles.png" alt="twistmobiles" class="client__img client__img--small">
               </div>
             </a>
           </div>
@@ -1208,13 +1349,19 @@
 </footer>
 </main>
     </div>
-    <script src="./js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <!--gsap scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-    <script src="./js/scrollmagic/uncompressed/ScrollMagic.js"></script>
-    <script src="./js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+    <script src="./js/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script src="./js/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
     <!-- <script src="./js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script> -->
     <script src="./js/jquery.onepage-scroll.min.js"></script>
+    <script type="text/javascript">
+      $(window).on("load",function() {
+          $(".s-loader").addClass('hide');
+          //console.log("laoded");
+      });
+      </script>
     <script>
     $(".scroll-container").onepage_scroll({
    sectionContainer: ".section",     // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -1234,5 +1381,6 @@
    scrollOverflowReset: true
 });
     </script>
+
   </body>
 </html>
