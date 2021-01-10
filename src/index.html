@@ -89,7 +89,7 @@
 
 .blob{
   position: fixed;
-    background: linear-gradient(90deg,rgb(255, 70, 37),rgb(255, 106, 37), rgb(255, 195, 37), #000000, #000000, rgb(255, 195, 37),rgb(255, 106, 37), rgb(255, 70, 37));
+    background: linear-gradient(90deg,#ef4e4b,#ee8a2d, rgb(255, 195, 37), #000000, #000000, rgb(255, 195, 37),#ee8a2d,#ef4e4b);
     background-size: 1000% 1000%;
     top: 25%;
     width: 50px;
@@ -1180,45 +1180,45 @@
       <div class="col-lg-10">
         <div class="row justify-content-center client__row">
           <div class="col-md-4 col-6 text-center client-col">
-            <a href="">
+            <a href="https://onewateracademy.org/" target="_blank">
               <div class="client">
-                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/onewater.png" alt="onewater" class="client__img">
+                <img src="./img/logo-p.svg" data-src="./img/clients/onewater.png" alt="onewater" class="lazy-img client__img">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
-            <a href="">
+            <a href="http://www.resilientutilities.org/" target="_blank">
               <div class="client">
-                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/ruc.png" alt="ruc" class="client__img">
+                <img src="./img/logo-p.svg" data-src="./img/clients/ruc.png" alt="ruc" class="lazy-img client__img">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
-            <a href="">
+            <a href="http://youtern.herokuapp.com/" target="_blank">
               <div class="client">
-                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/youtern.png" alt="foreign_admits" class="client__img">
+                <img src="./img/logo-p.svg" data-src="./img/clients/youtern.png" alt="foreign_admits" class="lazy-img client__img">
               </div>
             </a>
           </div>
      
           <div class="col-md-4 col-6 text-center client-col">
-            <a href="">
+            <a href="https://foreignadmits.com/" target="_blank">
               <div class="client">
-                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/foreign_admits.png" alt="foreign_admits" class="client__img">
+                <img src="./img/logo-p.svg" data-src="./img/clients/foreign_admits.png" alt="foreign_admits" class="lazy-img client__img">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
-            <a href="">
+            <a href="http://draymoncapital.com/" target="_blank">
               <div class="client">
-                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/draymon.png" alt="gujrati_samaj" class="client__img client__img--small">
+                <img src="./img/logo-p.svg" data-src="./img/clients/draymon.png" alt="gujrati_samaj" class="lazy-img client__img lazy-img client__img--small">
               </div>
             </a>
           </div>
           <div class="col-md-4 col-6 text-center client-col">
-            <a href="">
+            <a href="" target="_blank">
               <div class="client">
-                <img class="lazy-img" src="./img/logo-p.svg" data-src="./img/clients/twistmobiles.png" alt="twistmobiles" class="client__img client__img--small">
+                <img src="./img/logo-p.svg" data-src="./img/clients/twistmobiles.png" alt="twistmobiles" class="lazy-img client__img lazy-img client__img--small">
               </div>
             </a>
           </div>
@@ -1363,10 +1363,14 @@
     <!-- <script src="./js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script> -->
     <script src="./js/jquery.onepage-scroll.min.js"></script>
     <script type="text/javascript">
-      $(window).on("load",function() {
+     
+        $(window).on("load",function() {
+          setTimeout(()=>{
           $(".s-loader").addClass('hide');
           //console.log("laoded");
+        },1000)
       });
+
       </script>
     <script>
     $(".scroll-container").onepage_scroll({

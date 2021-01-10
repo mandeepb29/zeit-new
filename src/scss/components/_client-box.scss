@@ -11,14 +11,13 @@
     &__row{
         margin-top: 5rem;
     }
+    &-col{
+        display: flex;
+    }
     &__img{
-        height: 6.5rem;
+        height: 6rem;
         transition: all 0.3s;
         width: auto;
-
-        &--small{
-            height: 6.5rem;
-        }
     }
     &:hover{
         background-color: $color-yellow-primary;
