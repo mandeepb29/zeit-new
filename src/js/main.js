@@ -1,15 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
 //CURSOR ANIMATION
 const elements = {
     scrollContainer: document.querySelector(".scroll-container"),
